@@ -81,9 +81,6 @@ $(function() {
             items: 1
         },
         380 : {
-            items: 1
-        },
-        480 : {
             items: 2
         },
         600 : {

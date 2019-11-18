@@ -222,12 +222,20 @@ a.wt
   font-family: $g-reg
 .fz16
   font-size: 16px
+  +r(1200)
+    font-size: 14px
 .fz18
   font-size: 18px
+  +r(1200)
+    font-size: 16px
 .fz20
   font-size: 20px
+  +r(1200)
+    font-size: 17px
 .fz30
   font-size: 30px
+  +r(1200)
+    font-size: 20px
 .tac
   text-align: center
 .tal
@@ -499,6 +507,9 @@ a.wt
       border-radius: 50%
       background-color: $gr
       position: relative
+      +r(1200)
+        width: 15px
+        height: 15px
       &:not(:last-child)
         margin-right: 10px
       &.active
@@ -522,6 +533,9 @@ a.wt
       align-items: center
       +ease
       transform: translateY(-50%)
+      +r(1200)
+        width: 30px
+        height: 30px
       svg
         max-width: 17px
         max-height: 17px
@@ -529,6 +543,8 @@ a.wt
         fill: none
         stroke: #fff
         +ease
+        +r(1200)
+          max-height: 12px
     button.owl-prev:hover,
     button.owl-next:hover
       background-color: $red
@@ -543,17 +559,26 @@ a.wt
       cursor: default
     button.owl-prev
       left: calc(-57px/2)
+      +r(1200)
+        left: 5px
     button.owl-next
       right: calc(-57px/2)
+      +r(1200)
+        right: 5px
 .section
   &_inner
     padding: 60px 0
+    +r(1200)
+      padding: 35px 0
   &__ttl
     font-size: 38px
     font-family: $g-bold
     letter-spacing: 1px
     margin-bottom: 35px
     text-align: center
+    +r(1200)
+      font-size: 22px
+      margin-bottom: 25px
   &__decor
     z-index: 1
     &::before,
@@ -828,12 +853,17 @@ a.wt
       min-height: 370px
       opacity: 0
       transition: .6s all ease
+      +r(1200)
+        min-height: 270px
   &__ttl
     font-size: 45px
     max-width: 470px
     line-height: 1.2
     position: relative
     z-index: 1
+    +r(1200)
+      padding-top: 30px
+      font-size: 22px
   &__img
     position: absolute
     width: 857px
@@ -842,6 +872,12 @@ a.wt
     right: 0px
     transform: translateY(-50%)
     +ct
+    +r(1200)
+      width: 100%
+      height: 150px
+      top: auto
+      transform: translateY(0)
+      bottom: 20px
   .owl
     &-item.active
       .banner__item-in
@@ -860,19 +896,27 @@ a.wt
       align-items: center
       text-align: center
       background-color: $gr
-      border:
-        left: 1px solid $red
-        right: 1px solid $red
+      border-left: 1px solid $red
+      border-right: 1px solid $red
+      +r(1200)
+        min-height: 70px
+        border-top: 1px solid $red
+        border-bottom: 1px solid $red
       &-icon
         position: relative
         width: 40px
         height: 40px
         +ct
         margin-bottom: 10px
+        +r(1200)
+          height: 20px
+          height: 20px
       &-ttl
         position: relative
         color: $dark
         font-family: $g-bold
+        +r(1200)
+          font-size: 12px
       &::before
         position: absolute
         content: ''
@@ -915,6 +959,8 @@ a.wt
       +ct
       transition: .5s all ease-in-out
       transform: scale(.9)
+      +r(1200)
+        height: 60px
       &-wrp
         display: flex
         justify-content: center
@@ -927,6 +973,8 @@ a.wt
           top-left-radius: 3px
           top-right-radius: 3px
         +ease
+        +r(1200)
+          min-height: 80px
     &-ttl
       font-family: $g-bold
       font-size: 16px
@@ -941,6 +989,11 @@ a.wt
       padding-left: 5px
       padding-right: 5px
       +ease
+      +r(1200)
+        font-size: 13px
+        min-height: 20px
+        padding-top: 5px
+        padding-bottom: 5px
     &:hover
       .main-cat__item
         &-img
@@ -953,6 +1006,8 @@ a.wt
 .hit
   position: relative
   background-color: $lgr
+  +r(1200)
+    overflow: hidden
   &__item
     position: relative
     text-align: center
@@ -1069,18 +1124,19 @@ a.wt
     &-stage-outer
       padding-bottom: 30px
     &-dots
-      bottom: -40px
+      bottom: -30px
     &-item
       &.hover
         z-index: 2
         .hit__item
           box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.2)
 
-
 .brand
   position: relative
   color: #fff
   background-color: $dark
+  +r(1200)
+    overflow: hidden
   &__item
     width: 100%
     max-width: 170px
@@ -1093,10 +1149,16 @@ a.wt
     align-items: center
     border: 1px solid #dddddd21
     +ease
+    +r(1200)
+      max-width: 120px
+      height: 80px
     &-img
       width: 97px
       height: 41px
       +ct
+      +r(1200)
+        width: 80px
+        height: 30px
     &:hover
       background-color: $red
       border-color: $red
@@ -1112,6 +1174,8 @@ a.wt
           stroke: $lred
 .news
   position: relative
+  +r(1200)
+    overflow: hidden
   .section
     &__ttl
       position: relative
@@ -1126,10 +1190,14 @@ a.wt
         right: -20px
         bottom: 6px
         height: 22px
+        +r(1200)
+          bottom: 2px
     &__subttl
       font-family: $g-bold
       font-size: 30px
       line-height: 1.2
+      +r(1200)
+        font-size: 18px
   &__item
     width: 100%
     max-width: 370px
@@ -1146,6 +1214,8 @@ a.wt
       display: flex
       align-items: flex-end
       padding: 25px
+      +r(1200)
+        height: 140px
     &-date
       color: #fff
       svg
@@ -1155,14 +1225,22 @@ a.wt
       background-color: $lgr
       border: 1px solid $gr
       +ease
+      +r(1200)
+        padding: 15px
     &-ttl
       font-family: $g-bold
       font-size: 16px
       margin-bottom: 12px
+      +r(1200)
+        font-size: 14px
+        margin-bottom: 8px
+    &-descr
+      +r(1200)
+        font-size: 13px
   .owl-nav
     button.owl-prev,
     button.owl-next
-      margin-top: -120px
+      margin-top: -100px
 .scribe
   color: #fff
   background-color: $red
@@ -1191,6 +1269,8 @@ a.wt
         svg
           fill: $red
   &__form
+    +r(1200)
+      max-width: 460px
     input
       background-color: $tr
       border-color: #fff
@@ -1224,12 +1304,17 @@ a.wt
   position: relative
   background-color: $lgr
   overflow: hidden
+  +r(1200)
+    .section__ttl
+      font-size: 16px
   &__item
     display: flex
     flex-direction: column
     &:hover
       .steps__top
         transform: translateY(3px)
+    +r(1200)
+      font-size: 13px
   &__top
     font-family: $g-bold
     display: flex
@@ -1240,9 +1325,14 @@ a.wt
     line-height: 1
     color: $red
     margin-right: 10px
+    +r(1200)
+      font-size: 60px
   &__ttl
     font-size: 20px
     margin-bottom: 13px
+    +r(1200)
+      font-size: 14px
+      margin-bottom: 4px
 .found
   position: relative
   &__tel
@@ -1258,20 +1348,29 @@ a.wt
     text-align: left
 .seo-text
   background-color: $lgr
+  +r(1200)
+    font-size: 12px
 .footer
   color: #fff
   background-color: $dark
   padding-top: 40px
   padding-bottom: 40px
+  +r(1200)
+    text-align: center
+    font-size: 12px
   &__top
     &-ttl
       font-family: $g-bold
       font-size: 18px
+      +r(1200)
+        font-size: 14px
       svg
         transform: rotate(90deg)
     &-link
       text-decoration: underline
       color: $dgr
+      +r(1200)
+        font-size: 12px
       &:not(:last-child)
         margin-bottom: 8px
       &:hover
@@ -1280,6 +1379,9 @@ a.wt
       color: $dgr
       &:not(:last-child)
         margin-bottom: 8px
+    &-list
+      +r(1200)
+        display: none
   &__logo
     text-transform: uppercase
     width: 125px

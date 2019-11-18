@@ -322,16 +322,40 @@ a.wt:hover {
   font-size: 16px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .fz16 {
+    font-size: 14px;
+  }
+}
+
 .fz18 {
   font-size: 18px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .fz18 {
+    font-size: 16px;
+  }
 }
 
 .fz20 {
   font-size: 20px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .fz20 {
+    font-size: 17px;
+  }
+}
+
 .fz30 {
   font-size: 30px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .fz30 {
+    font-size: 20px;
+  }
 }
 
 .tac {
@@ -771,6 +795,13 @@ a.wt:hover {
   position: relative;
 }
 
+@media only screen and (max-width: 1200px) {
+  .owl-carousel .owl-dots button.owl-dot {
+    width: 15px;
+    height: 15px;
+  }
+}
+
 .owl-carousel .owl-dots button.owl-dot:not(:last-child) {
   margin-right: 10px;
 }
@@ -814,6 +845,14 @@ a.wt:hover {
           transform: translateY(-50%);
 }
 
+@media only screen and (max-width: 1200px) {
+  .owl-carousel .owl-nav button.owl-prev,
+  .owl-carousel .owl-nav button.owl-next {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 .owl-carousel .owl-nav button.owl-prev svg,
 .owl-carousel .owl-nav button.owl-next svg {
   max-width: 17px;
@@ -824,6 +863,13 @@ a.wt:hover {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
+}
+
+@media only screen and (max-width: 1200px) {
+  .owl-carousel .owl-nav button.owl-prev svg,
+  .owl-carousel .owl-nav button.owl-next svg {
+    max-height: 12px;
+  }
 }
 
 .owl-carousel .owl-nav button.owl-prev:hover,
@@ -850,13 +896,31 @@ a.wt:hover {
   left: calc(-57px/2);
 }
 
+@media only screen and (max-width: 1200px) {
+  .owl-carousel .owl-nav button.owl-prev {
+    left: 5px;
+  }
+}
+
 .owl-carousel .owl-nav button.owl-next {
   right: -webkit-calc(-57px/2);
   right: calc(-57px/2);
 }
 
+@media only screen and (max-width: 1200px) {
+  .owl-carousel .owl-nav button.owl-next {
+    right: 5px;
+  }
+}
+
 .section_inner {
   padding: 60px 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .section_inner {
+    padding: 35px 0;
+  }
 }
 
 .section__ttl {
@@ -865,6 +929,13 @@ a.wt:hover {
   letter-spacing: 1px;
   margin-bottom: 35px;
   text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .section__ttl {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
 }
 
 .section__decor {
@@ -1322,12 +1393,25 @@ a.wt:hover {
   transition: .6s all ease;
 }
 
+@media only screen and (max-width: 1200px) {
+  .banner__item-in {
+    min-height: 270px;
+  }
+}
+
 .banner__ttl {
   font-size: 45px;
   max-width: 470px;
   line-height: 1.2;
   position: relative;
   z-index: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+  .banner__ttl {
+    padding-top: 30px;
+    font-size: 22px;
+  }
 }
 
 .banner__img {
@@ -1342,6 +1426,18 @@ a.wt:hover {
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 1200px) {
+  .banner__img {
+    width: 100%;
+    height: 150px;
+    top: auto;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    bottom: 20px;
+  }
 }
 
 .banner .owl-item.active .banner__item-in {
@@ -1383,6 +1479,14 @@ a.wt:hover {
   border-right: 1px solid #9B0606;
 }
 
+@media only screen and (max-width: 1200px) {
+  .banner__bar-item {
+    min-height: 70px;
+    border-top: 1px solid #9B0606;
+    border-bottom: 1px solid #9B0606;
+  }
+}
+
 .banner__bar-item-icon {
   position: relative;
   width: 40px;
@@ -1393,10 +1497,23 @@ a.wt:hover {
   margin-bottom: 10px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .banner__bar-item-icon {
+    height: 20px;
+    height: 20px;
+  }
+}
+
 .banner__bar-item-ttl {
   position: relative;
   color: #343434;
   font-family: "GothamPro-Bold";
+}
+
+@media only screen and (max-width: 1200px) {
+  .banner__bar-item-ttl {
+    font-size: 12px;
+  }
 }
 
 .banner__bar-item::before {
@@ -1476,6 +1593,12 @@ a.wt:hover {
           transform: scale(0.9);
 }
 
+@media only screen and (max-width: 1200px) {
+  .main-cat__item-img {
+    height: 60px;
+  }
+}
+
 .main-cat__item-img-wrp {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1498,6 +1621,12 @@ a.wt:hover {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
+}
+
+@media only screen and (max-width: 1200px) {
+  .main-cat__item-img-wrp {
+    min-height: 80px;
+  }
 }
 
 .main-cat__item-ttl {
@@ -1528,6 +1657,15 @@ a.wt:hover {
   transition: .3s all ease;
 }
 
+@media only screen and (max-width: 1200px) {
+  .main-cat__item-ttl {
+    font-size: 13px;
+    min-height: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
 .main-cat__item:hover .main-cat__item-img {
   -webkit-transform: scale(0.99);
       -ms-transform: scale(0.99);
@@ -1546,6 +1684,12 @@ a.wt:hover {
 .hit {
   position: relative;
   background-color: #F9F6F6;
+}
+
+@media only screen and (max-width: 1200px) {
+  .hit {
+    overflow: hidden;
+  }
 }
 
 .hit__item {
@@ -1747,7 +1891,7 @@ a.wt:hover {
 }
 
 .hit .owl-dots {
-  bottom: -40px;
+  bottom: -30px;
 }
 
 .hit .owl-item.hover {
@@ -1763,6 +1907,12 @@ a.wt:hover {
   position: relative;
   color: #fff;
   background-color: #343434;
+}
+
+@media only screen and (max-width: 1200px) {
+  .brand {
+    overflow: hidden;
+  }
 }
 
 .brand__item {
@@ -1789,12 +1939,26 @@ a.wt:hover {
   transition: .3s all ease;
 }
 
+@media only screen and (max-width: 1200px) {
+  .brand__item {
+    max-width: 120px;
+    height: 80px;
+  }
+}
+
 .brand__item-img {
   width: 97px;
   height: 41px;
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 1200px) {
+  .brand__item-img {
+    width: 80px;
+    height: 30px;
+  }
 }
 
 .brand__item:hover {
@@ -1821,6 +1985,12 @@ a.wt:hover {
   position: relative;
 }
 
+@media only screen and (max-width: 1200px) {
+  .news {
+    overflow: hidden;
+  }
+}
+
 .news .section__ttl {
   position: relative;
   color: #9B0606;
@@ -1838,10 +2008,22 @@ a.wt:hover {
   height: 22px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .news .section__ttl::after {
+    bottom: 2px;
+  }
+}
+
 .news .section__subttl {
   font-family: "GothamPro-Bold";
   font-size: 30px;
   line-height: 1.2;
+}
+
+@media only screen and (max-width: 1200px) {
+  .news .section__subttl {
+    font-size: 18px;
+  }
 }
 
 .news__item {
@@ -1879,6 +2061,12 @@ a.wt:hover {
   padding: 25px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .news__item-img {
+    height: 140px;
+  }
+}
+
 .news__item-date {
   color: #fff;
 }
@@ -1896,15 +2084,34 @@ a.wt:hover {
   transition: .3s all ease;
 }
 
+@media only screen and (max-width: 1200px) {
+  .news__item-info {
+    padding: 15px;
+  }
+}
+
 .news__item-ttl {
   font-family: "GothamPro-Bold";
   font-size: 16px;
   margin-bottom: 12px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .news__item-ttl {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .news__item-descr {
+    font-size: 13px;
+  }
+}
+
 .news .owl-nav button.owl-prev,
 .news .owl-nav button.owl-next {
-  margin-top: -120px;
+  margin-top: -100px;
 }
 
 .scribe {
@@ -1954,6 +2161,12 @@ a.wt:hover {
 
 .scribe__soc-item:hover svg {
   fill: #9B0606;
+}
+
+@media only screen and (max-width: 1200px) {
+  .scribe__form {
+    max-width: 460px;
+  }
 }
 
 .scribe__form input {
@@ -2027,6 +2240,12 @@ a.wt:hover {
   overflow: hidden;
 }
 
+@media only screen and (max-width: 1200px) {
+  .steps .section__ttl {
+    font-size: 16px;
+  }
+}
+
 .steps__item {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2043,6 +2262,12 @@ a.wt:hover {
   -webkit-transform: translateY(3px);
       -ms-transform: translateY(3px);
           transform: translateY(3px);
+}
+
+@media only screen and (max-width: 1200px) {
+  .steps__item {
+    font-size: 13px;
+  }
 }
 
 .steps__top {
@@ -2067,9 +2292,22 @@ a.wt:hover {
   margin-right: 10px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .steps__num {
+    font-size: 60px;
+  }
+}
+
 .steps__ttl {
   font-size: 20px;
   margin-bottom: 13px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .steps__ttl {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
 }
 
 .found {
@@ -2097,6 +2335,12 @@ a.wt:hover {
   background-color: #F9F6F6;
 }
 
+@media only screen and (max-width: 1200px) {
+  .seo-text {
+    font-size: 12px;
+  }
+}
+
 .footer {
   color: #fff;
   background-color: #343434;
@@ -2104,9 +2348,22 @@ a.wt:hover {
   padding-bottom: 40px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .footer {
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
 .footer__top-ttl {
   font-family: "GothamPro-Bold";
   font-size: 18px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .footer__top-ttl {
+    font-size: 14px;
+  }
 }
 
 .footer__top-ttl svg {
@@ -2118,6 +2375,12 @@ a.wt:hover {
 .footer__top-link {
   text-decoration: underline;
   color: #ddddddbf;
+}
+
+@media only screen and (max-width: 1200px) {
+  .footer__top-link {
+    font-size: 12px;
+  }
 }
 
 .footer__top-link:not(:last-child) {
@@ -2134,6 +2397,12 @@ a.wt:hover {
 
 .footer__top-info:not(:last-child) {
   margin-bottom: 8px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .footer__top-list {
+    display: none;
+  }
 }
 
 .footer__logo {
