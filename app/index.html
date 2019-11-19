@@ -13,7 +13,7 @@
   <header class="header">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-xl-5">
+        <div class="header__col col-xl-5">
           <div class="d-flex justify-content-between align-items-center">
             <div class="d-flex flex-column">
               <div class="d-flex align-items-center mb-2">
@@ -37,59 +37,150 @@
             <button type="button" data-fancybox data-src="#popup_succ-order" class="btn btn_white">Заказать звонок</button>
           </div>
         </div>
-        <div class="col-xl-2">
-          <div class="header__logo upp w-100 h-100">
-            ЛОГО
-          </div>
-        </div>
-        <div class="col-xl-5">
-          <form class="header__search w-100">
-            <div class="d-flex w-100">
-              <div class="header__search-bar d-flex align-items-center">
-                <input type="text" class="header__search-query" placeholder="Поиск">
-                <button type="button" class="d-flex align-items-center header__search-opt">
-                  <svg width="13" height="11" viewBox="0 0 13 11" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.16667 6.05C2.46582 6.05 2.70833 6.29624 2.70833 6.6V10.45C2.70833 10.7538 2.46582 11 2.16667 11C1.86751 11 1.625 10.7538 1.625 10.45V6.6C1.625 6.29624 1.86751 6.05 2.16667 6.05Z"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.16667 0C2.46582 0 2.70833 0.246243 2.70833 0.55V4.4C2.70833 4.70376 2.46582 4.95 2.16667 4.95C1.86751 4.95 1.625 4.70376 1.625 4.4V0.55C1.625 0.246243 1.86751 0 2.16667 0Z"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 4.95C6.79915 4.95 7.04167 5.19624 7.04167 5.5V10.45C7.04167 10.7538 6.79915 11 6.5 11C6.20085 11 5.95833 10.7538 5.95833 10.45V5.5C5.95833 5.19624 6.20085 4.95 6.5 4.95Z"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 0C6.79915 0 7.04167 0.246243 7.04167 0.55V3.3C7.04167 3.60376 6.79915 3.85 6.5 3.85C6.20085 3.85 5.95833 3.60376 5.95833 3.3V0.55C5.95833 0.246243 6.20085 0 6.5 0Z"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8333 7.15C11.1325 7.15 11.375 7.39624 11.375 7.7V10.45C11.375 10.7538 11.1325 11 10.8333 11C10.5342 11 10.2917 10.7538 10.2917 10.45V7.7C10.2917 7.39624 10.5342 7.15 10.8333 7.15Z"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8333 0C11.1325 0 11.375 0.246243 11.375 0.55V5.5C11.375 5.80376 11.1325 6.05 10.8333 6.05C10.5342 6.05 10.2917 5.80376 10.2917 5.5V0.55C10.2917 0.246243 10.5342 0 10.8333 0Z"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 6.6C0 6.29624 0.242512 6.05 0.541667 6.05H3.79167C4.09082 6.05 4.33333 6.29624 4.33333 6.6C4.33333 6.90376 4.09082 7.15 3.79167 7.15H0.541667C0.242512 7.15 0 6.90376 0 6.6Z"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.33333 3.3C4.33333 2.99624 4.57585 2.75 4.875 2.75H8.125C8.42415 2.75 8.66667 2.99624 8.66667 3.3C8.66667 3.60376 8.42415 3.85 8.125 3.85H4.875C4.57585 3.85 4.33333 3.60376 4.33333 3.3Z"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.66667 7.7C8.66667 7.39624 8.90918 7.15 9.20833 7.15H12.4583C12.7575 7.15 13 7.39624 13 7.7C13 8.00376 12.7575 8.25 12.4583 8.25H9.20833C8.90918 8.25 8.66667 8.00376 8.66667 7.7Z"/>
-                  </svg>
-                  <span class="ml-2">Тираж и цена</span>
-                </button>
-                <div class="header__search-pop">
-                  <div class="bold mb-2">Тираж:</div>
-                  <div class="d-flex justify-content-between align-items-center w-100 mb-3">
-                    <div class="d-flex align-items-center">
-                      <span class="mr-2">От</span>
-                      <input type="number" class="tar" placeholder="Шт">
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <span class="mr-2">До</span>
-                      <input type="number" class="tar" placeholder="Шт">
-                    </div>
+        <div class="header__col col-xl-2">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="header-cat mr-2 d-none">
+              <button type="button" class="d-flex align-items-center header-cat__btn">
+                <div class="header-cat__btn-icon"><span></span></div>
+                <div class="header-cat__btn-ttl"><span>Каталог</span></div>
+              </button>
+              <div class="header-cat__list">
+                <div class="row">
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Ежедневники</a>
                   </div>
-                  <div class="bold mb-2">Цена:</div>
-                  <div class="d-flex justify-content-between align-items-center w-100 mb-3">
-                    <div class="d-flex align-items-center">
-                      <span class="mr-2">От</span>
-                      <input type="number" class="tar" placeholder="Р">
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <span class="mr-2">До</span>
-                      <input type="number" class="tar" placeholder="Р">
-                    </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Ручки</a>
                   </div>
-                  <button class="btn btn_red w-100">Фильтровать</button>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Гаджеты</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Бизнес и офис</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Сумки</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Одежда</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Спорт и отдых</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Посуда</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Зонты</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Дом и быт</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Часы</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Кожгалантерея</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Новый год</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Съедобные подарки</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Подарки</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Сувениры на заказ</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Упаковка</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Вымпелы и флаги</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Награды</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Сделано в Самаре</a>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <a href="#" class="header-cat__link">Новинки</a>
+                  </div>
                 </div>
               </div>
-              <button type="submit" class="btn btn_red header__search-btn">Найти</button>
             </div>
-          </form>
+            <a href="#" class="header__logo upp w-100">
+              ЛОГО
+            </a>
+            <a href="tel:88462402044" class="ml-2 bold header__tel d-none">8 (846) 240-20-44</a>
+          </div>
+        </div>
+        <div class="header__col col-xl-5">
+          <div class="d-flex align-items-center justify-content-between w-100">
+            <form class="header__search">
+              <div class="d-flex">
+                <div class="header__search-bar d-flex align-items-center">
+                  <input type="text" class="header__search-query" placeholder="Поиск">
+                  <button type="button" class="header__search-opt">
+                    <div class="d-flex align-items-center">
+                      <svg width="13" height="11" viewBox="0 0 13 11" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.16667 6.05C2.46582 6.05 2.70833 6.29624 2.70833 6.6V10.45C2.70833 10.7538 2.46582 11 2.16667 11C1.86751 11 1.625 10.7538 1.625 10.45V6.6C1.625 6.29624 1.86751 6.05 2.16667 6.05Z"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.16667 0C2.46582 0 2.70833 0.246243 2.70833 0.55V4.4C2.70833 4.70376 2.46582 4.95 2.16667 4.95C1.86751 4.95 1.625 4.70376 1.625 4.4V0.55C1.625 0.246243 1.86751 0 2.16667 0Z"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 4.95C6.79915 4.95 7.04167 5.19624 7.04167 5.5V10.45C7.04167 10.7538 6.79915 11 6.5 11C6.20085 11 5.95833 10.7538 5.95833 10.45V5.5C5.95833 5.19624 6.20085 4.95 6.5 4.95Z"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 0C6.79915 0 7.04167 0.246243 7.04167 0.55V3.3C7.04167 3.60376 6.79915 3.85 6.5 3.85C6.20085 3.85 5.95833 3.60376 5.95833 3.3V0.55C5.95833 0.246243 6.20085 0 6.5 0Z"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8333 7.15C11.1325 7.15 11.375 7.39624 11.375 7.7V10.45C11.375 10.7538 11.1325 11 10.8333 11C10.5342 11 10.2917 10.7538 10.2917 10.45V7.7C10.2917 7.39624 10.5342 7.15 10.8333 7.15Z"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8333 0C11.1325 0 11.375 0.246243 11.375 0.55V5.5C11.375 5.80376 11.1325 6.05 10.8333 6.05C10.5342 6.05 10.2917 5.80376 10.2917 5.5V0.55C10.2917 0.246243 10.5342 0 10.8333 0Z"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 6.6C0 6.29624 0.242512 6.05 0.541667 6.05H3.79167C4.09082 6.05 4.33333 6.29624 4.33333 6.6C4.33333 6.90376 4.09082 7.15 3.79167 7.15H0.541667C0.242512 7.15 0 6.90376 0 6.6Z"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.33333 3.3C4.33333 2.99624 4.57585 2.75 4.875 2.75H8.125C8.42415 2.75 8.66667 2.99624 8.66667 3.3C8.66667 3.60376 8.42415 3.85 8.125 3.85H4.875C4.57585 3.85 4.33333 3.60376 4.33333 3.3Z"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.66667 7.7C8.66667 7.39624 8.90918 7.15 9.20833 7.15H12.4583C12.7575 7.15 13 7.39624 13 7.7C13 8.00376 12.7575 8.25 12.4583 8.25H9.20833C8.90918 8.25 8.66667 8.00376 8.66667 7.7Z"/>
+                      </svg>
+                      <span class="ml-2">Тираж и цена</span>
+                    </div>
+                  </button>
+                  <div class="header__search-pop">
+                    <div class="bold mb-2">Тираж:</div>
+                    <div class="d-flex justify-content-between align-items-center w-100 mb-3">
+                      <div class="d-flex align-items-center">
+                        <span class="mr-2">От</span>
+                        <input type="number" class="tar" placeholder="Шт">
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="mr-2">До</span>
+                        <input type="number" class="tar" placeholder="Шт">
+                      </div>
+                    </div>
+                    <div class="bold mb-2">Цена:</div>
+                    <div class="d-flex justify-content-between align-items-center w-100 mb-3">
+                      <div class="d-flex align-items-center">
+                        <span class="mr-2">От</span>
+                        <input type="number" class="tar" placeholder="Р">
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="mr-2">До</span>
+                        <input type="number" class="tar" placeholder="Р">
+                      </div>
+                    </div>
+                    <button class="btn btn_red w-100">Фильтровать</button>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn_red header__search-btn">Найти</button>
+              </div>
+            </form>
+            <button type="button" data-fancybox data-src="#popup_click" class="btn btn_white ml-2 mr-2 d-none">Заказать звонок</button>
+            <a href="#" class="header-cart d-none">
+              <span class="header-cart__btn">
+                <svg width="24" height="23" viewBox="0 0 24 23" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7 21C7 19.8954 7.89543 19 9 19C10.1046 19 11 19.8954 11 21C11 22.1046 10.1046 23 9 23C7.89543 23 7 22.1046 7 21Z"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M18 21C18 19.8954 18.8954 19 20 19C21.1046 19 22 19.8954 22 21C22 22.1046 21.1046 23 20 23C18.8954 23 18 22.1046 18 21Z"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1C0 0.447715 0.447715 0 1 0H5C5.47663 0 5.88701 0.336385 5.98055 0.803743L6.82043 5H23C23.298 5 23.5805 5.13293 23.7705 5.36256C23.9605 5.59218 24.0381 5.89458 23.9823 6.18733L22.3809 14.5848C22.2437 15.2754 21.868 15.8958 21.3195 16.3373C20.7738 16.7766 20.0916 17.011 19.3914 17H9.68864C8.98837 17.011 8.3062 16.7766 7.76048 16.3373C7.21225 15.8959 6.83664 15.2759 6.69933 14.5857L5.02879 6.2392C5.02201 6.21159 5.01638 6.18353 5.01195 6.15508L4.18032 2H1C0.447715 2 0 1.55228 0 1ZM7.22073 7L8.66084 14.1952C8.70656 14.4254 8.83179 14.6322 9.01461 14.7793C9.19743 14.9265 9.42619 15.0047 9.66084 15.0002L9.68 15H19.4L19.4192 15.0002C19.6538 15.0047 19.8826 14.9265 20.0654 14.7793C20.2474 14.6328 20.3723 14.4273 20.4185 14.1984L21.7913 7H7.22073Z"/>
+                </svg>
+              </span>
+              <span class="header-cart__val">12</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -276,7 +367,7 @@
       <div class="section__ttl">Каталог продукции</div>
       <div class="row">
         <div class="col-xl-2 col-sm-4 col-6 mb-3">
-          <a href="#" class="main-cat__item">
+          <a href="#popup_call" data-fancybox class="main-cat__item">
             <div class="main-cat__item-img-wrp">
               <div class="main-cat__item-img" style="background-image: url(img/main-cat__item_1.jpg)"></div>
             </div>
@@ -284,7 +375,7 @@
           </a>
         </div>
         <div class="col-xl-2 col-sm-4 col-6 mb-3">
-          <a href="#" class="main-cat__item">
+          <a href="#popup_order" data-fancybox class="main-cat__item">
             <div class="main-cat__item-img-wrp">
               <div class="main-cat__item-img" style="background-image: url(img/main-cat__item_2.jpg)"></div>
             </div>
@@ -292,7 +383,7 @@
           </a>
         </div>
         <div class="col-xl-2 col-sm-4 col-6 mb-3">
-          <a href="#" class="main-cat__item">
+          <a href="#popup_good" data-fancybox class="main-cat__item">
             <div class="main-cat__item-img-wrp">
               <div class="main-cat__item-img" style="background-image: url(img/main-cat__item_3.jpg)"></div>
             </div>
@@ -300,7 +391,7 @@
           </a>
         </div>
         <div class="col-xl-2 col-sm-4 col-6 mb-3">
-          <a href="#" class="main-cat__item">
+          <a href="#popup_click" data-fancybox class="main-cat__item">
             <div class="main-cat__item-img-wrp">
               <div class="main-cat__item-img" style="background-image: url(img/main-cat__item_4.jpg)"></div>
             </div>
@@ -308,7 +399,7 @@
           </a>
         </div>
         <div class="col-xl-2 col-sm-4 col-6 mb-3">
-          <a href="#" class="main-cat__item">
+          <a href="#popup_coop" data-fancybox class="main-cat__item">
             <div class="main-cat__item-img-wrp">
               <div class="main-cat__item-img" style="background-image: url(img/main-cat__item_5.jpg)"></div>
             </div>
@@ -316,7 +407,7 @@
           </a>
         </div>
         <div class="col-xl-2 col-sm-4 col-6 mb-3">
-          <a href="#" class="main-cat__item">
+          <a href="#popup_succ-call" data-fancybox class="main-cat__item">
             <div class="main-cat__item-img-wrp">
               <div class="main-cat__item-img" style="background-image: url(img/main-cat__item_6.jpg)"></div>
             </div>
@@ -324,7 +415,7 @@
           </a>
         </div>
         <div class="col-xl-2 col-sm-4 col-6 mb-3">
-          <a href="#" class="main-cat__item">
+          <a href="#popup_succ-cart" data-fancybox class="main-cat__item">
             <div class="main-cat__item-img-wrp">
               <div class="main-cat__item-img" style="background-image: url(img/main-cat__item_7.jpg)"></div>
             </div>
@@ -332,7 +423,7 @@
           </a>
         </div>
         <div class="col-xl-2 col-sm-4 col-6 mb-3">
-          <a href="#" class="main-cat__item">
+          <a href="#popup_succ-order" data-fancybox class="main-cat__item">
             <div class="main-cat__item-img-wrp">
               <div class="main-cat__item-img" style="background-image: url(img/main-cat__item_8.jpg)"></div>
             </div>
@@ -1198,8 +1289,8 @@
           <textarea name="popup_order__text" placeholder="Ваше сообщение" rows="3" class="w-100"></textarea>
         </div>
         <div class="popup__captcha mb-3"></div>
-        <div class="popup_call__col d-flex align-items-center w-100 mb-3">
-          <a href="#" class="btn mr-3">Вернуться в корзину</a>
+        <div class="popup_call__col d-flex flex-wrap flex-sm-nowrap s align-items-center w-100 mb-3">
+          <a href="#" class="btn mb-2 mb-sm-0 mr-sm-3">Вернуться в корзину</a>
           <input type="submit" class="btn btn_red" name="popup_order__sumbit" value="Отправить заявку">
         </div>
         <label for="popup_order__checkbox" class="checkbox mb-3">

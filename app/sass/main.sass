@@ -326,6 +326,8 @@ a.wt
     width: 100%
     height: 30px
     display: block
+    +r(1200)
+      font-size: 12px
     &::before
       content: ''
       position: absolute
@@ -612,6 +614,9 @@ a.wt
   color: #fff
   background-color: $dark
   padding: 15px 0
+  +ease
+  +r(1200)
+    display: none
   &__cont
     color: #fff
     svg
@@ -633,6 +638,7 @@ a.wt
     text-align: center
     background-color: $gr
   &__search
+    width: 100%
     &-bar
       position: relative
       width: 100%
@@ -686,10 +692,139 @@ a.wt
         padding: 8px 10px
     &-btn
         box-shadow: inset 0px 0px 0px 2px $dark
+  &-cat
+    position: relative
+    &__btn
+      color: #fff
+      background-color: $tr
+      border: 1px solid #fff
+      border-radius: 2px
+      padding: 1px
+      +ease
+      &-ttl
+        position: relative
+        height: 40px
+        font-family: $g-bold
+        padding-left: 5px
+        padding-right: 10px
+        display: flex
+        align-items: center
+        +ease
+        &::before
+          content: ''
+          position: absolute
+          left: -2px
+          top: 0
+          height: 100%
+          width: 0
+          background-color: #fff
+          +ease
+          border-top-right-radius: 2px
+          border-bottom-right-radius: 2px
+        span
+          position: relative
+      &-icon
+        position: relative
+        width: 40px
+        height: 40px
+        background-color: #fff
+        border-radius: 2px
+        display: flex
+        justify-content: center
+        align-items: center
+        +ease
+        &>span
+          width: 20px
+          height: 2px
+          background-color: $dark
+          border-radius: 2px
+        &::before,
+        &::after
+          content: ''
+          position: absolute
+          left: 50%
+          width: 20px
+          height: 2px
+          background-color: $dark
+          border-radius: 2px
+          transform: translateX(-50%)
+        &::before
+          top: 12px
+        &::after
+          bottom: 12px
+      &:hover
+        .header-cat__btn
+          &-icon
+            border-top-right-radius: 0
+            border-bottom-right-radius: 0
+          &-ttl
+            color: $dark
+            &::before
+              left: -1px
+              width: 100%
+    &.active
+      .header-cat__btn
+        &-icon
+          border-top-right-radius: 0
+          border-bottom-right-radius: 0
+        &-ttl
+          color: $dark
+          &::before
+            left: -1px
+            width: 100%
+    &__list
+      position: absolute
+      left: 0
+      width: 540px
+      padding: 20px
+      background-color: #fff
+      border-radius: 4px
+      box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.3)
+      z-index: 2
+      display: none
+    &__link
+      font-family: $g-bold
+      font-size: 16px
+      text-decoration: underline
+  &-cart
+    display: block
+    max-width: 44px
+    position: relative
+    &__btn
+      width: 44px
+      height: 44px
+      display: flex
+      justify-content: center
+      align-items: center
+      color: #fff
+      background-color: $red
+      border: 1px solid $red
+      border-radius: 2px
+      box-shadow: inset 0px 0px 0px 2px $dark
+      +ease
+      svg
+        margin-right: 3px
+    &__val
+      position: absolute
+      font-size: 10px
+      font-family: $g-bold
+      text-align: center
+      width: 15px
+      height: 15px
+      top: -2px
+      right: -2px
+      background-color: #fff
+      border-radius: 50%
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    &:hover
+      .header-cart__btn
+        background-color: $lred
+        border-color: $lred
 .nav
   &__wrp
     background-color: $lgr
     padding: 12px 0
+    +ease
   &__link
     font-family: $g-bold
     position: relative
@@ -845,6 +980,49 @@ a.wt
       .nav-cart__btn
         background-color: $dark
         border-color: $dark
+.sticky
+  padding-top: 120px
+  .header
+    position: fixed
+    width: 100%
+    left: 0
+    top: 0
+    z-index: 4
+    background-color: #343434ed
+    padding: 0
+    .header__col
+      &:nth-child(1)
+        display: none
+      &:nth-child(2)
+        .header
+          &__logo
+            max-width: 170px
+            max-height: 80px
+            height: 66px !important
+          &-cat
+            display: block !important
+          &__tel
+            display: block !important
+            font-size: 22px
+            font-family: $g-bold
+            color: #fff
+            +ease
+            &:hover
+              color: $lred
+      &:nth-child(3)
+        .header
+          &__search
+            width: auto
+            &-bar
+              max-width: 241px
+            &-opt
+              display: none
+          &-cart
+            display: block !important
+        .btn
+          display: block !important
+  .nav__wrp
+    display: none
 .banner
   overflow: hidden
   &__item
@@ -1241,6 +1419,35 @@ a.wt
     button.owl-prev,
     button.owl-next
       margin-top: -100px
+  &-list
+    &__item
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding-bottom: 20px
+      margin-bottom: 25px
+      border-bottom: 1px solid $gr
+      +r(600)
+        font-size: 13px
+        flex-direction: column
+      &-img
+        min-width: 170px
+        height: 136px
+        border-radius: 3px
+        +cv
+        display: block
+        &:hover
+          opacity: .7
+  &-page
+    &__img
+      width: 100%
+      height: 400px
+      +cv
+      margin-bottom: 30px
+      +r(1200)
+        height: 300px
+      +r(600)
+        height: 200px
 .scribe
   color: #fff
   background-color: $red
@@ -1366,6 +1573,10 @@ a.wt
         font-size: 14px
       svg
         transform: rotate(90deg)
+        +ease
+      &.active
+        svg
+          transform: rotate(-90deg)
     &-link
       text-decoration: underline
       color: $dgr
@@ -1391,6 +1602,8 @@ a.wt
     justify-content: center
     align-items: center
     margin-right: 20px
+    +r(1200)
+      margin-right: 0
   &__soc
     &-item
       width: 44px
@@ -1409,3 +1622,340 @@ a.wt
         box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.25)
         svg
           fill: #fff
+.main
+  padding-top: 30px
+  padding-bottom: 50px
+  +r(1200)
+    padding-top: 25px
+    padding-bottom: 35px
+.crumbs
+  display: flex
+  flex-wrap: wrap
+  list-style-type: none
+  margin-bottom: 0
+  margin: 0
+  padding: 15px 0
+  +r(1200)
+    padding: 5px 0
+  li
+    margin-bottom: 10px
+    +r(1200)
+      margin-bottom: 5px
+  li,
+  a
+    font-size: 13px
+    position: relative
+    color: $dark
+  li:not(:last-child)
+    margin-right: 6px
+    +ease
+    &::after
+      content: '>'
+      position: relative
+      margin-left: 6px
+      +ct
+    &:hover
+      a
+        color: $lred
+        transition: unset
+  li:last-child
+    color: $lred
+    text-decoration: underline
+div
+  &.pagination
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 20px
+    padding: 15px 0 30px
+    ul
+      &.pagination
+        list-style-type: none
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-bottom: 0
+        padding: 0
+        li
+          display: flex
+          justify-content: center
+          align-items: center
+          +ease
+          &:not(:last-child)
+            margin-right: 10px
+          &.active
+            a
+              color: $red
+          a
+            font-family: $g-med
+            color: $dark
+            border: none
+            display: flex
+            justify-content: center
+            align-items: center
+          &:hover
+            opacity: .7
+          &.control
+            opacity: 1
+            color: #fff
+            position: relative
+            border: 1px solid $dark
+            background-color: $dark
+            box-shadow: inset 0px 0px 0px 2px #fff
+            border-radius: 50%
+            +ease
+            &:hover
+              background-color: $red
+              border-color: $red
+            span
+              width: 35px
+              height: 35px
+              display: flex
+              justify-content: center
+              align-items: center
+              +ease
+              svg
+                max-width: 17px
+                max-height: 17px
+                height: auto
+                fill: none
+                stroke: #fff
+                +ease
+            &_prev
+              margin-right: 25px
+            &_next
+              margin-left: 25px
+            &:hover
+              background-color: $red
+              border-color: $red
+              svg
+                stroke: #fff
+.about
+  &-test
+    background-color: $lgr
+    &__item
+      background-color: #FFFFFF
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25)
+      border-radius: 3px
+      padding: 25px 20px
+      +r(1200)
+        padding: 15px
+      &-img
+        width: 74px
+        height: 68px
+        +ct
+        margin-bottom: 10px
+      &-ttl
+        color: $red
+        font-family: $g-bold
+        font-size: 20px
+        margin-bottom: 10px
+        +r(1200)
+          font-size: 14px
+      &-descr
+        +r(1200)
+          font-size: 12px
+  &-descr
+    background-color: $lgr
+.cert
+  +r(1200)
+    overflow: hidden
+  &__item
+    position: relative
+    +cv
+    max-width: 171px
+    height: 241px
+    margin-left: auto
+    margin-right: auto
+    cursor: pointer
+    border-radius: 3px
+    overflow: hidden
+    display: flex
+    justify-content: center
+    align-items: center
+    +r(1200)
+      height: 200px
+    &::before
+      +ovl
+      background-color: $red
+      opacity: 0
+      +ease
+    &:hover
+      &::before
+        opacity: .7
+      .cert__btn
+        transform: scale(1)
+        opacity: 1
+  &__btn
+    position: relative
+    width: 52px
+    height: 53px
+    +ct
+    background-image: url('../img/icon__loupe.svg')
+    opacity: 0
+    +ease
+.port
+  +r(1200)
+    overflow: hidden
+  &__item
+    position: relative
+    +cv
+    max-width: 270px
+    height: 270px
+    margin-left: auto
+    margin-right: auto
+    cursor: pointer
+    border-radius: 3px
+    overflow: hidden
+    display: flex
+    justify-content: center
+    align-items: center
+    +r(1200)
+      height: 200px
+    &::before
+      +ovl
+      background-color: $red
+      opacity: 0
+      +ease
+    &:hover
+      &::before
+        opacity: .7
+      .port__btn
+        transform: scale(1)
+        opacity: 1
+  &__btn
+    position: relative
+    width: 52px
+    height: 53px
+    +ct
+    background-image: url('../img/icon__loupe.svg')
+    opacity: 0
+    +ease
+.team
+  background-color: $lgr
+  &__item
+    max-width: 370px
+    margin-left: auto
+    margin-right: auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    &-img
+      width: 100%
+      height: 250px
+      margin-bottom: 15px
+      +cv
+      +r(1200)
+        height: 170px
+    &-ttl
+      color: $red
+      font-family: $g-bold
+      font-size: 20px
+      margin-bottom: 8px
+      +r(1200)
+        font-size: 14px
+.cont
+  &__banner
+    position: relative
+    min-height: 600px
+    +r(1200)
+      min-height: auto
+      iframe
+        display: none
+  &__map
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translateY(-50%)
+    margin-left: calc(-1110px/2)
+    color: #fff
+    max-width: 587px
+    +r(1200)
+      position: relative
+      max-width: unset
+      left: 0
+      top: 0
+      transform: translate(0)
+      margin-left: 0
+      background-color: $dark
+    &-top
+      color: #fff
+      padding: 25px 15px
+      background-color: #cb0909a8
+    &-img
+      width: 100%
+      height: 150px
+      +cv
+  &__req-link
+    color: $red
+    svg
+      fill: $red
+    &:hover
+      svg
+        fill: $lred
+.socials
+  color: #fff
+  background-color: $dark
+  &__item
+    width: 44px
+    height: 44px
+    border: 1px solid #fff
+    border-radius: 3px
+    display: flex
+    justify-content: center
+    align-items: center
+    svg
+      fill: #fff
+      +ease
+    &:hover
+      background-color: $red
+      border-color: $red
+      box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.25)
+      svg
+        fill: #fff
+.manager
+  background-color: $lgr
+  &__item
+    max-width: 270px
+    margin-left: auto
+    margin-right: auto
+    display: flex
+    flex-direction: column
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25)
+    border-radius: 2px
+    overflow: hidden
+    &-info
+      background-color: #fff
+      padding: 15px
+    &-img
+      width: 100%
+      height: 220px
+      +cv
+      +r(1200)
+        height: 170px
+    &-ttl
+      font-family: $g-bold
+      font-size: 20px
+      color: #000
+      text-transform: uppercase
+      margin-bottom: 8px
+      +r(1200)
+        font-size: 14px
+.feed
+  +cv
+  .section__ttl
+    font-family: $g-med
+  &__in
+    max-width: 870px
+    margin-left: auto
+    margin-right: auto
+  &__captcha
+    width: 270px
+    height: 72px
+    margin-left: auto
+    margin-right: auto
+    +cv
+    background-image: url('../img/captcha.jpg')
+  .btn
+    width: 270px

@@ -1,8 +1,27 @@
 $(function() {
+  //sticky header
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 4) {
+      $('body').addClass('sticky');
+      $('.header__col:nth-child(2)').removeClass('col-xl-2').addClass('col-xl-6');
+      $('.header__col:nth-child(3)').removeClass('col-xl-5').addClass('col-xl-6');
+    }
+    else {
+      $('body').removeClass('sticky');
+      $('.header__col:nth-child(2)').removeClass('col-xl-6').addClass('col-xl-2');
+      $('.header__col:nth-child(3)').removeClass('col-xl-6').addClass('col-xl-5');
+    }
+  });
   $('.nav-cat').hover(function() {
     $(this)
       .toggleClass('active')
       .find('.nav-cat__list')
+      .slideToggle(0);
+  });
+  $('.header-cat').hover(function() {
+    $(this)
+      .toggleClass('active')
+      .find('.header-cat__list')
       .slideToggle(0);
   });
   $('.header__search-opt').on('click', function(){
@@ -119,6 +138,66 @@ $(function() {
         }
       }
   });
+  $('.cert__in').owlCarousel({
+      nav: true,
+      loop: false,
+      dots: false,
+      smartSpeed: 800,
+      margin: 30,
+      navText: ["<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg>","<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg>"],
+      responsive : {
+        0   : {
+            items: 1
+        },
+        380 : {
+            items: 2
+        },
+        600 : {
+            items: 3
+        },
+        900 : {
+            items: 4
+        },
+        1200 : {
+            items: 6
+        }
+      }
+  });
+  $('.port__in').owlCarousel({
+      nav: true,
+      loop: false,
+      dots: false,
+      smartSpeed: 800,
+      startPosition: 0,
+      margin: 15,
+      navText: ["<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg>","<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg>"],
+      responsive : {
+        0   : {
+            items: 1
+        },
+        380 : {
+            items: 1
+        },
+        480 : {
+            items: 1
+        },
+        600 : {
+            items: 2
+        },
+        900 : {
+            items: 3
+        },
+        1200 : {
+            items: 4
+        }
+      },
+  });
+  $('.footer__top-ttl').on('click', function() {
+    $(this)
+    .toggleClass('active')
+    .next('.footer__top-list')
+    .slideToggle();
+  })
   // tabs 
   // if ( $(window).width() > 600 ) {
   //   $(document).ready(function () {
