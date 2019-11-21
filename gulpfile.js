@@ -32,6 +32,7 @@ gulp.task('scripts', function() {
   return gulp.src([ // Берем все необходимые библиотеки
     'app/libs/jquery/jquery.min.js',
     'app/libs/fancybox/jquery.fancybox.min.js',
+    'app/libs/jquery/jquery-ui.min.js',
     'app/libs/owl.carousel/owl.carousel.min.js'
     ])
     .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
@@ -42,6 +43,7 @@ gulp.task('css-libs', function() {
   return gulp.src([
     'app/libs/bootstrap/bootstrap.min.css',
     'app/libs/fancybox/jquery.fancybox.min.css',
+    'app/libs/jquery/jquery-ui.min.css',
     'app/libs/owl.carousel/owl.carousel.min.css'
     ]) // Выбираем файлы для минификации
     .pipe(concat('libs.min.css'))

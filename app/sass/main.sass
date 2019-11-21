@@ -77,7 +77,7 @@ textarea,
 select
   color: $dark
   font-family: $g-reg
-  font-size: 13px
+  font-size: 14px
   padding: 12px 25px
   border-radius: 2px
   border: none
@@ -112,24 +112,26 @@ input[type="number"]
   &::before
     content: ''
     position: absolute
-    width: 20px
-    height: 20px
-    background: url('../img/select__arr.png') no-repeat 50% 50% / contain
+    width: 12px
+    height: 7px
+    background: url('../img/icon__arr_bot-blck.svg') no-repeat 50% 50% / contain
     top: 50%
     transform: translateY(-50%)
     right: 9px
+    +ease
   select
     width: 100%
     background-color: $tr
     border: none
-    padding: 8px 40px 8px 12px
+    padding: 12px 25px 12px 15px
     position: relative
     appearance: none
     option
       width: 100%
   &:hover
     &::before
-      transform: translateY(-50%) scale(.9)
+      top: 54%
+      transform: translateY(-50%)
 .input__wrp
   position: relative
   // max-width: 230px
@@ -175,28 +177,6 @@ input[type="number"]
       top: 14px
       transform: translateY(0)
       background-image: url('../img/icon__form-mes.svg')
-.tabs
-  &__content-item
-    transition: unset
-  &__list
-    list-style-type: none
-    padding: 0
-    margin: 0
-  &-acc
-    &__btn
-      display: none
-      width: 100%
-      padding: 12px 25px
-      background-color: #E0E0E0
-      font-weight: bold
-      text-align: center
-      cursor: pointer
-      border: 1px solid #fff
-      &.active
-        background-color: #ccc
-        color: #fff
-    &__cnt
-      transition: unset
 .img-fluid
   max-width: 100%
   height: auto
@@ -284,6 +264,40 @@ a.wt
       background-color: $lred
 .fancybox-container *
   transition: unset
+.quantity
+  position: relative
+  max-width: 103px
+  min-width: 100px
+  input
+    background-color: $tr
+    width: 100%
+    border-color: $gr
+    &:focus
+      border-color: $lred
+  &-num
+    text-align: center
+  &-minus,
+  &-plus
+    position: absolute
+    height: 50%
+    top: 50%
+    transform: translate(0,-50%)
+    font-family: $g-reg
+    font-size: 24px
+    line-height: 0
+    border: none
+    display: flex
+    justify-content: center
+    border-radius: 50%
+    align-items: center
+    &:hover
+      opacity: .7
+  &-minus
+    left: 5px
+    color: $red
+  &-plus
+    right: 5px
+    color: #3498DB
 .tabs
   &__content-item
     transition: unset
@@ -363,9 +377,6 @@ a.wt
   input[type="checkbox"]:checked + .checkbox__text:before,
   input[type="radio"]:checked + .checkbox__text:before
     background-color: #fff
-    // border: 1px solid #39B54A
-  // input[type="checkbox"]:focus + .checkbox__text:before
-  //  box-shadow: inset 0 1px 2px rgba(0,0,0,.2), 0 0 0 1px rgba(49, 179, 237, 0.61)
 .img-fluid
   max-width: 100%
   height: auto
@@ -658,8 +669,8 @@ a.wt
     &-opt
       position: relative
       color: #fff
-      padding: 12px
-      padding-right: 20px
+      padding: 5px
+      padding-right: 10px
       &::before
         content: ''
         position: absolute
@@ -1623,8 +1634,11 @@ a.wt
         svg
           fill: #fff
 .main
+  position: relative
   padding-top: 30px
   padding-bottom: 50px
+  &_gr
+    background-color: $lgr
   +r(1200)
     padding-top: 25px
     padding-bottom: 35px
@@ -1635,10 +1649,12 @@ a.wt
   margin-bottom: 0
   margin: 0
   padding: 15px 0
+  &__wrp
+    &_gr
+      background-color: $lgr
   +r(1200)
     padding: 5px 0
   li
-    margin-bottom: 10px
     +r(1200)
       margin-bottom: 5px
   li,
@@ -1661,6 +1677,11 @@ a.wt
   li:last-child
     color: $lred
     text-decoration: underline
+.bot-crumbs
+  span
+    padding: 15px 0
+    +r(1200)
+      padding: 5px 0
 div
   &.pagination
     display: flex
@@ -1959,3 +1980,455 @@ div
     background-image: url('../img/captcha.jpg')
   .btn
     width: 270px
+.cat
+  &-side
+    position: sticky
+    left: 0
+    top: 70px
+    background-color: #fff
+    border: 1px solid #E3E3E3
+    border-radius: 3px
+    &__ttl
+      font-family: $g-bold
+      padding: 11px 15px
+      cursor: pointer
+      +ease
+      &.active
+        background-color: $red
+        color: #fff
+        &:hover
+          color: #fff
+      &:hover
+        color: $red
+    &__list
+      display: none
+      background-color: $lgr
+    &__link
+      padding: 9px 15px
+  &-tabs
+    .tabs
+      &__list
+        font-size: 15px
+        display: flex
+        padding-bottom: 20px
+        margin-bottom: 20px
+        border-bottom: 1px solid #e4e1e1
+        +r(1200)
+          font-size: 14px
+          flex-wrap: wrap
+        li
+          padding: 12px 15px
+          background-color: #FFFFFF
+          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3)
+          border-radius: 3px
+          +ease
+          cursor: pointer
+          &:hover
+            color: $red
+          &.active
+            color: #fff
+            background-color: $dark
+            box-shadow: 0px 10px 10px rgba(155, 6, 6, 0.15)
+            cursor: unset
+          &:not(:last-child)
+            margin-right: 6px
+  &-filter
+    padding-bottom: 20px
+    margin-bottom: 20px
+    border-bottom: 1px solid #e4e1e1
+    &__top
+      &>*
+        margin-bottom: 5px
+        &:not(:last-child)
+          margin-right: 6px
+    .select__wrp
+      background-color: $lgr
+      // border: none
+      // +r(1200)
+      //   border: 1px solid #BDBDBD
+    &__checkbox
+      .checkbox__text
+        font-size: 15px
+        position: relative
+        padding-left: 0
+        cursor: pointer
+        width: 100%
+        height: auto
+        display: block
+        padding: 12px 15px
+        background-color: #FFFFFF
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3)
+        border-radius: 3px
+        +ease
+        &:hover
+          color: $red
+        &::before
+          display: none
+        &::after
+          display: none
+      input[type="checkbox"]:checked + .checkbox__text,
+      input[type="radio"]:checked + .checkbox__text
+        color: #fff
+        background-color: $dark
+      &_excl
+        .checkbox__text
+          color: #fff
+          background-color: $red
+          &:hover
+            color: #fff
+            background-color: $lred
+        input[type="checkbox"]:checked + .checkbox__text,
+        input[type="radio"]:checked + .checkbox__text
+          color: #fff
+          background-color: $lred
+  &__item
+    position: relative
+    text-align: center
+    background-color: #fff
+    border: 1px solid $gr
+    padding: 30px 15px
+    max-width: 270px
+    min-height: 402px
+    margin:
+      left: auto
+      right: auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    overflow: hidden
+    &:hover
+      box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.2)
+    &-img
+      width: 100%
+      height: 150px
+      +ct
+      margin-bottom: 12px
+      +ease
+      &:hover
+        transform: scale(.96)
+    &-ttl
+      font-size: 16px
+      margin-bottom: 12px
+      min-height: 40px
+      display: flex
+      align-items: center
+    &-price
+      font-family: $g-bold
+      font-size: 20px
+      margin-bottom: 12px
+      &_old
+        opacity: .5
+        text-decoration: line-through
+    .btn
+      max-width: 170px
+      width: 100%
+    &-wrp
+      position: relative
+      &.hover
+        z-index: 2
+      &:nth-child(3n+3)
+        &:hover
+          box-shadow: -8px 10px 10px rgba(0, 0, 0, 0.2)
+        .cat__item-more
+          right: auto
+          left: calc(-100%)
+          border-right: none
+          border-left: 1px solid #DDDDDD
+          box-shadow: -8px 10px 10px rgba(0, 0, 0, 0.2)
+    &-flag
+      font-size: 12px
+      padding: 5px 10px
+      border-radius: 4px
+      margin-bottom: 5px
+      &_new
+        color: #fff
+        background-color: #0B97E6
+    &-more
+      position: absolute
+      font-size: 16px
+      top: 0
+      right: calc(-100%)
+      width: calc(100% + 15px)
+      height: 100%
+      padding: 30px 25px
+      background-color: #fff
+      border:
+        top: 1px solid $gr
+        right: 1px solid $gr
+        bottom: 1px solid $gr
+      z-index: 2
+      display: none
+      box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.2)
+      +r(1200)
+        display: none !important
+      &-click
+        svg
+          fill: $dark
+        &:hover
+          color: $red
+          svg
+            fill: $red
+    &-colors
+      max-width: 150px
+      margin-left: auto
+      margin-right: auto
+      &-item
+        width: 39px
+        height: 39px
+        border-radius: 50%
+        border: 5px solid #fff
+        display: block
+        +ease
+        &:hover
+          border-color: $gr
+      .owl
+        &-stage-outer
+          padding-bottom: 0 !important
+        &-nav
+          button.owl
+            &-prev,
+            &-next
+              width: 20px
+              height: 20px
+              background-color: $tr
+              border: none
+              box-shadow: none
+              transform: translateY(-50%)
+              svg
+                stroke: $dark
+              &:hover
+                background-color: $tr
+                svg
+                  stroke: $red
+// .ui-button:focus,
+// .ui-button:hover,
+// .ui-state-focus,
+// .ui-state-hover,
+// .ui-widget-content .ui-state-focus,
+// .ui-widget-content .ui-state-hover,
+// .ui-widget-header .ui-state-focus,
+// .ui-widget-header .ui-state-hover
+//   color: #fff
+//   background: #282828
+//   border-color: $red
+//   .ui-icon
+//     opacity: 1 !important
+// .ui-button .ui-icon,
+// .ui-button:focus .ui-icon,
+// .ui-button:hover .ui-icon,
+// .ui-state-focus .ui-icon,
+// .ui-state-hover .ui-icon
+//   background-image: url('../img/icon__arr_bot-blck.svg')
+//   background-position: 50% 50%
+//   background-size: contain
+//   margin-top: 4px
+//   width: 11px
+//   height: 10px
+//   opacity: .6
+//   // background: #000
+// .ui-selectmenu-button
+//   font-family: $g-med
+//   font-size: 14px
+//   color: #A0A0A0
+//   outline: none
+//   background: #282828
+//   border: 1px solid #282828
+//   box-sizing: border-box
+//   border-radius: 3px
+//   // min-width: 200px
+//   padding: 14px 15px
+//   &:hover
+//     color: #fff
+//     background: #282828
+// .ui-selectmenu-button-open
+//   border-bottom-left-radius: 0px
+//   border-bottom-right-radius: 0px
+//   background-color: #282828
+//   color: #A0A0A0
+//   .ui-icon
+//     transform: scaleY(-1)
+//     opacity: 1 !important
+.card
+  &__slider
+    &-top
+      background-color: #fff
+      border: 1px solid #e4e1e1
+      border-radius: 3px
+      &-item
+        width: 100%
+        min-height: 486.5px
+        +ct
+        background-size: 80%
+        +r(600)
+          min-height: 310px
+    &-bot
+      &-item
+        min-height: 100px
+        +ct
+        background-size: 80%
+        background-color: #fff
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2)
+        border-radius: 3px
+        margin-bottom: 5px
+        border: 4px solid $tr
+        +ease
+        cursor: pointer
+        &:hover
+          border-color: #fff
+        +r(600)
+          min-height: 90px
+      .synced
+        .card__slider-bot-item
+          border-color: $gr
+  &__info
+    font-size: 15px
+    padding: 25px
+    border: 1px solid $gr
+    border-radius: 3px
+    +r(1200)
+      padding: 8px
+  &__colors
+    display: flex
+    flex-wrap: wrap
+    margin-left: auto
+    margin-right: auto
+    padding-bottom: 15px
+    margin-bottom: 15px
+    border-bottom: 1px solid #e4e1e1
+    &-item
+      width: 39px
+      height: 39px
+      border-radius: 50%
+      border: 5px solid #fff
+      display: block
+      +ease
+      &:not(:last-child)
+        margin-right: 5px
+        margin-bottom: 5px
+      &:hover
+        border-color: $gr
+  &__price
+    padding-bottom: 15px
+    margin-bottom: 15px
+    border-bottom: 1px solid #e4e1e1
+    &-val
+      font-family: $g-bold
+      font-size: 28px
+  &__table
+    tbody
+      background-color: #fff
+    th
+      text-align: center
+      padding: 6px 5px
+    td
+      text-align: center
+      border: 1px solid $lgr
+      padding: 5px 5px
+    &-wrp
+      padding-bottom: 15px
+      margin-bottom: 15px
+      border-bottom: 1px solid #e4e1e1
+      +r(600)
+        overflow-y: scroll
+  &__tabs
+    &-list-wrp
+      background-color: $lgr
+    .tabs
+      &__list
+        display: flex
+        flex-wrap: wrap
+        li
+          position: relative
+          font-family: $g-bold
+          padding: 15px 25px
+          background-color: $gr
+          cursor: pointer
+          +ease
+          +r(600)
+            text-align: center
+            padding: 5px 10px
+            width: 100%
+          &::before
+            position: absolute
+            content: ''
+            width: 100%
+            top: -3px
+            left: 0
+            height: 2px
+            opacity: 0
+            +ease
+          &:hover
+            &::before
+              background-color: $dark
+              opacity: 1
+          &.active
+            color: #fff
+            background-color: $red
+            &::before
+              opacity: 1
+              background-color: $red
+          &:not(:last-child)
+            margin-right: 1px
+      &__content-item
+        padding: 40px 0
+        +r(1200)
+          padding: 25px 0
+.view
+  background-color: $lgr
+  .owl-dots
+    bottom: -30px
+  &__item
+    position: relative
+    text-align: center
+    background-color: #fff
+    border: 1px solid $gr
+    padding: 30px 25px
+    max-width: 270px
+    margin:
+      left: auto
+      right: auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    overflow: hidden
+    &-img
+      width: 100%
+      height: 150px
+      +ct
+      margin-bottom: 12px
+      +ease
+      &:hover
+        transform: scale(.96)
+    &-ttl
+      font-size: 16px
+      margin-bottom: 12px
+      min-height: 40px
+      display: flex
+      align-items: center
+    &-price
+      font-family: $g-bold
+      font-size: 20px
+      margin-bottom: 12px
+    &-more
+      position: absolute
+      font-size: 16px
+      top: 0
+      right: calc(-100% - 15px)
+      width: calc(100% + 15px)
+      height: 100%
+      padding: 30px 25px
+      background-color: #fff
+      border:
+        top: 1px solid $gr
+        right: 1px solid $gr
+        bottom: 1px solid $gr
+      z-index: 2
+      display: none
+      box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.2)
+      &-click
+        svg
+          fill: $dark
+        &:hover
+          color: $red
+          svg
+            fill: $red
