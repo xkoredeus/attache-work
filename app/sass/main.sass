@@ -195,11 +195,19 @@ a.wt
 .black
   color: #000
 .bold
-  font-family: $g-bold
+  font-family: $g-bold !important
 .med
-  font-family: $g-med
+  font-family: $g-med !important
 .reg
-  font-family: $g-reg
+  font-family: $g-reg !important
+.fz13
+  font-size: 13px
+  +r(1200)
+    font-size: 12px
+.fz14
+  font-size: 14px
+  +r(1200)
+    font-size: 13px
 .fz16
   font-size: 16px
   +r(1200)
@@ -262,12 +270,13 @@ a.wt
     &:hover
       border-color: $lred
       background-color: $lred
-.fancybox-container *
-  transition: unset
+// .fancybox-container *
+//   transition: unset
 .quantity
   position: relative
-  max-width: 103px
   min-width: 100px
+  max-width: 120px
+  width: 100px
   input
     background-color: $tr
     width: 100%
@@ -1566,6 +1575,8 @@ a.wt
     text-align: left
 .seo-text
   background-color: $lgr
+  &_wt
+    background-color: #fff
   +r(1200)
     font-size: 12px
 .footer
@@ -1613,7 +1624,7 @@ a.wt
     justify-content: center
     align-items: center
     margin-right: 20px
-    +r(1200)
+    +r(600)
       margin-right: 0
   &__soc
     &-item
@@ -1964,6 +1975,7 @@ div
       +r(1200)
         font-size: 14px
 .feed
+  position: relative
   +cv
   .section__ttl
     font-family: $g-med
@@ -2432,3 +2444,178 @@ div
           color: $red
           svg
             fill: $red
+.cart
+  &__list
+    +r(600)
+      margin-left: 0
+      margin-right: 0
+  &__item
+    background-color: #fff
+    border: 1px solid $gr
+    border-radius: 3px
+    padding-top: 20px
+    padding-bottom: 20px
+    +r(1200)
+      font-size: 13px
+      text-align: center
+      padding-top: 15px
+      padding-bottom: 25px
+    &-img
+      width: 90px
+      height: 90px
+      display: block
+      margin-left: auto
+      margin-right: auto
+      +cv
+      +ease
+      &:hover
+        opacity: .7
+    .quantity
+      min-width: 85px
+    &-btn
+      width: 46px
+      height: 46px
+      line-height: 1
+      padding: 0
+      font-size: 32px
+      font-family: $g-reg
+      +r(1200)
+        width: 200px
+        height: auto
+        font-size: 13px
+        padding: 12px 15px
+.upload__file
+  width: 0.1px
+  height: 0.1px
+  opacity: 0
+  overflow: hidden
+  position: absolute
+  z-index: -1
+  &-wrp
+    cursor: pointer
+    label.filename
+      cursor: pointer
+      margin-bottom: 0
+      cursor: pointer
+.prod
+  &__item
+    width: 100%
+    padding-bottom: 25px
+    +r(1200)
+      width: 49%
+      flex-wrap: wrap
+      padding: 0
+      margin-bottom: 20px !important
+      border-bottom: none !important
+    // +r(600)
+    //   width: 100%
+    &:not(:last-child)
+      margin-bottom: 25px
+      border-bottom: 1px solid $dgr
+    &-card
+      display: flex
+      flex-direction: column
+      max-width: 170px
+      min-width: 170px
+      transition: unset
+      +r(1200)
+        margin-left: auto
+        margin-right: auto
+      +r(1200)
+        min-width: 100px
+      &-img
+        width: 95%
+        height: 110px
+        +ct
+        transition: .5s all ease-in-out
+        transform: scale(.9)
+        +r(1200)
+          height: 60px
+        &-wrp
+          display: flex
+          justify-content: center
+          align-items: center
+          min-height: 120px
+          background-color: #fff
+          border:
+            left: 1px solid $gr
+            top: 1px solid $gr
+            right: 1px solid $gr
+            top-left-radius: 3px
+            top-right-radius: 3px
+          +ease
+          +r(1200)
+            min-height: 80px
+          +r(600)
+            min-height: 45px
+      &-ttl
+        font-family: $g-bold
+        font-size: 16px
+        min-height: 50px
+        display: flex
+        justify-content: center
+        align-items: center
+        text-align: center
+        background-color: $lgr
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25)
+        border-radius: 3px
+        padding-left: 5px
+        padding-right: 5px
+        +ease
+        +r(1200)
+          font-size: 12px
+          min-height: 20px
+          padding-top: 5px
+          padding-bottom: 5px
+        +r(600)
+          font-size: 11px
+      &:hover
+        .prod__item-card
+          &-img
+            transform: scale(.99)
+            &-wrp
+              border-color: $lred
+          &-ttl
+            color: #fff
+            background-color: $lred
+    &-list
+      padding-left: 25px
+      +r(1200)
+        padding-left: 0
+        margin-top: 10px
+      &-link
+        width: 25%
+        text-decoration: underline
+        +r(1200)
+          font-size: 12px
+          width: 50%
+        +r(1200)
+          text-align: center
+          width: 100%
+.excl
+  &__slider
+    background-color: #fff
+    border-radius: 3px
+    overflow: hidden
+    border: 1px solid $gr
+    &-item
+      height: 300px
+      +cv
+      background-size: 70%
+    .owl-dots
+      bottom: 20px
+  &-bot
+    &__slider
+      &-item
+        height: 270px
+        border-radius: 3px
+        +ease
+        cursor: pointer
+        &:hover
+          opacity: .8
+      .owl-nav
+        button.owl
+          &-prev
+            left: 0
+          &-next
+            right: 0

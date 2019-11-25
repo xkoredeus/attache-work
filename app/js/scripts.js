@@ -380,6 +380,47 @@ $(function() {
       input.val( +input.val() + 1 );
     };
   });
+  //Стилизованный input type file
+  $('.upload__file').change(function() {
+    var filename = [];
+    for (var i = 0; i < $(this).get(0).files.length; ++i) { // Запускаем цикл и перебираем все файлы
+      filename.push($(this).get(0).files[i].name.slice(0, 18) + '...'); // Добавляем имена файлов в массив
+    }
+    $(this).next('.filename').text(filename.join(', '));
+    $(this).parent().next('.upload__file-status').css('display','none');
+  });
+  $('.excl__slider').owlCarousel({
+      nav: false,
+      items: 1,
+      loop: false,
+      dots: true,
+      smartSpeed: 800,
+  });
+  $('.excl-bot__slider').owlCarousel({
+      nav: true,
+      loop: false,
+      dots: false,
+      smartSpeed: 800,
+      margin: 30,
+      navText: ["<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg>","<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg>"],
+      responsive : {
+        0   : {
+            items: 1
+        },
+        380 : {
+            items: 1
+        },
+        600 : {
+            items: 1
+        },
+        900 : {
+            items: 2
+        },
+        1200 : {
+            items: 3
+        }
+      }
+  });
   // if ( $(window).width() > 1200 ) {
   //  $('.selectmenu').selectmenu();
   // }

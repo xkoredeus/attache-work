@@ -34,7 +34,7 @@
                 <span class="ml-2">mail@attashe.ru</span>
               </a>
             </div>
-            <button type="button" data-fancybox data-src="#popup_succ-order" class="btn btn_white">Заказать звонок</button>
+            <button type="button" data-fancybox data-src="#popup_succ-order" class="btn btn_wcate">Заказать звонок</button>
           </div>
         </div>
         <div class="header__col col-xl-2">
@@ -169,7 +169,7 @@
                 <button type="submit" class="btn btn_red header__search-btn">Найти</button>
               </div>
             </form>
-            <button type="button" data-fancybox data-src="#popup_click" class="btn btn_white ml-2 mr-2 d-none">Заказать звонок</button>
+            <button type="button" data-fancybox data-src="#popup_click" class="btn btn_wcate ml-2 mr-2 d-none">Заказать звонок</button>
             <a href="#" class="header-cart d-none">
               <span class="header-cart__btn">
                 <svg width="24" height="23" viewBox="0 0 24 23" fill="#fff" xmlns="http://www.w3.org/2000/svg">
@@ -287,55 +287,211 @@
     <div class="container">
       <ul class="crumbs">
         <li><a href="#">Главная</a></li>
-        <li><a href="#">Новости</a></li>
-        <li>Металлический шик: ручка и роллер от бренда B1</li>
+        <li>Корзина</li>
       </ul>
     </div>
   </div>
   <main class="main main_gr">
     <div class="container">
-      <div class="news-page__img" style="background-image: url(img/news-page__img.jpg)"></div>
-      <p>Элегантные и привлекательные — это <span class="bold">ручки DELICATE от бренда B1</span>. DELICATE — утонченное воплощение классики в мире металлических ручек. Глубокий насыщенный цвет корпуса подчеркнут изящным хромированным клипом. Ручка DELICATE подчеркнет значимость каждого написанного слова.
-      <p>Выберете ли вы <span class="bold">ручку с поворотным механизмом (арт. 26906) или роллер (26907)</span> — DELICATE станет верным спутником Ваших партнеров на долгие годы. Логотип или памятное сообщение можно нанести на ручку с помощью тампопечати или лазерной гравировки.</p>
-      <p>Скомплектуйте персонализированную ручку и роллер вместе, поместите в футляр и сделайте своему VIP-партнеру запоминающийся и полезный подарок.</p>
-      <p class="bold">Товар уже в пути, определяйтесь с тиражом и делайте резервы!</p>
-      <div class="d-flex justify-content-center mt-3">
-        <button type="button" data-fancybox data-src="#popup_order" class="btn btn_red">Оформить заявку</button>
+      <div class="section__ttl tal">Корзина</div>
+      <div class="row bold fz13 pb-3 d-none d-xl-flex">
+        <div class="offset-xl-2"></div>
+        <div class="col-xl-3">Наименование товара</div>
+        <div class="col-xl-2">Тираж</div>
+        <div class="col-xl-1 tac">Цена</div>
+        <div class="col-xl-1 tac">Сумма</div>
+        <div class="col-xl-2 tac">Комментарий</div>
+        <div class="col-xl-1 tac">Удалить</div>
+      </div>
+      <div class="row cart__list">
+        <div class="cart__item col-xl-12 col-sm-6 col-12 mb-2 mb-sm-0 mb-xl-3">
+          <div class="row align-items-xl-center">
+            <div class="col-xl-2">
+              <a href="#" class="cart__item-img mb-2 mb-xl-0" style="background-image: url(img/card__slider-bot_1.jpg)"></a>
+            </div>
+            <div class="col-xl-3 mb-2 mb-xl-0">
+              <a href="#">Артикул 5402.08 Флешка «Ключ», 8 Гб</a>
+            </div>
+            <div class="col-xl-2 mb-2 mb-xl-0">
+              <div class="d-flex flex-column align-items-center">
+                <span class="d-xl-none mb-1 fz13">Количество</span>
+                <div class="quantity w-100 d-flex justify-content-center">
+                  <button type="button" class="quantity-minus"><span>-</span></button>
+                  <input type="number" min="1" value="10000" class="quantity-num">
+                  <button type="button" class="quantity-plus"><span>+</span></button>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-1 tac mb-2 mb-xl-0">
+              <div class="d-flex justify-content-center align-items-center">
+                <span class="d-xl-none mr-1">Цена:</span>
+                <span>389,00 Р</span>
+              </div>
+            </div>
+            <div class="col-xl-1 tac bold mb-2 mb-xl-0">
+              <div class="d-flex justify-content-center align-items-center">
+                <span class="d-xl-none mr-1">Сумма:</span>
+                <span>11281,00&nbsp;Р</span>
+              </div>
+            </div>
+            <div class="col-xl-2 mb-2 mb-xl-0">
+              <div class="w-100 d-flex justify-content-center">
+                <button type="btn" data-src="#popup_order" data-fancybox class="btn btn_red cart__item-btn">
+                  <div class="w-100 d-flex justify-content-center align-items-center">
+                    <span class="d-xl-none">Добавить комментарий</span>
+                    <span class="d-none d-xl-block">+</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div class="col-xl-1">
+              <div class="w-100 d-flex justify-content-center">
+                <button type="button" class="btn cart__item-btn d-flex justify-content-center align-items-center">
+                  <span class="d-xl-none mr-1">Удалить</span>
+                  <svg width="16" height="18" viewBox="0 0 16 18" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4.09091C0 3.63904 0.358172 3.27273 0.8 3.27273H15.2C15.6418 3.27273 16 3.63904 16 4.09091C16 4.54278 15.6418 4.90909 15.2 4.90909H0.8C0.358172 4.90909 0 4.54278 0 4.09091Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.4 1.63636C6.18783 1.63636 5.98434 1.72253 5.83431 1.87597C5.68428 2.0294 5.6 2.23755 5.6 2.45455V3.27273H10.4V2.45455C10.4 2.23755 10.3157 2.0294 10.1657 1.87597C10.0157 1.72253 9.81217 1.63636 9.6 1.63636H6.4ZM12 3.27273V2.45455C12 1.80356 11.7471 1.17922 11.2971 0.718905C10.847 0.258589 10.2365 0 9.6 0H6.4C5.76348 0 5.15303 0.258589 4.70294 0.718905C4.25285 1.17922 4 1.80356 4 2.45455V3.27273H2.4C1.95817 3.27273 1.6 3.63904 1.6 4.09091V15.5455C1.6 16.1964 1.85285 16.8208 2.30294 17.2811C2.75303 17.7414 3.36348 18 4 18H12C12.6365 18 13.247 17.7414 13.6971 17.2811C14.1471 16.8208 14.4 16.1964 14.4 15.5455V4.09091C14.4 3.63904 14.0418 3.27273 13.6 3.27273H12ZM3.2 4.90909V15.5455C3.2 15.7625 3.28429 15.9706 3.43431 16.124C3.58434 16.2775 3.78783 16.3636 4 16.3636H12C12.2122 16.3636 12.4157 16.2775 12.5657 16.124C12.7157 15.9706 12.8 15.7624 12.8 15.5455V4.90909H3.2Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.4 7.36364C6.84183 7.36364 7.2 7.72995 7.2 8.18182V13.0909C7.2 13.5428 6.84183 13.9091 6.4 13.9091C5.95817 13.9091 5.6 13.5428 5.6 13.0909V8.18182C5.6 7.72995 5.95817 7.36364 6.4 7.36364Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.6 7.36364C10.0418 7.36364 10.4 7.72995 10.4 8.18182V13.0909C10.4 13.5428 10.0418 13.9091 9.6 13.9091C9.15817 13.9091 8.8 13.5428 8.8 13.0909V8.18182C8.8 7.72995 9.15817 7.36364 9.6 7.36364Z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cart__item col-xl-12 col-sm-6 col-12 mb-2 mb-sm-0 mb-xl-3">
+          <div class="row align-items-xl-center">
+            <div class="col-xl-2">
+              <a href="#" class="cart__item-img mb-2 mb-xl-0" style="background-image: url(img/card__slider-bot_1.jpg)"></a>
+            </div>
+            <div class="col-xl-3 mb-2 mb-xl-0">
+              <a href="#">Артикул 5402.08 Флешка «Ключ», 8 Гб</a>
+            </div>
+            <div class="col-xl-2 mb-2 mb-xl-0">
+              <div class="d-flex flex-column align-items-center">
+                <span class="d-xl-none mb-1 fz13">Количество</span>
+                <div class="quantity w-100 d-flex justify-content-center">
+                  <button type="button" class="quantity-minus"><span>-</span></button>
+                  <input type="number" min="1" value="10000" class="quantity-num">
+                  <button type="button" class="quantity-plus"><span>+</span></button>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-1 tac mb-2 mb-xl-0">
+              <div class="d-flex justify-content-center align-items-center">
+                <span class="d-xl-none mr-1">Цена:</span>
+                <span>389,00 Р</span>
+              </div>
+            </div>
+            <div class="col-xl-1 tac bold mb-2 mb-xl-0">
+              <div class="d-flex justify-content-center align-items-center">
+                <span class="d-xl-none mr-1">Сумма:</span>
+                <span>11281,00&nbsp;Р</span>
+              </div>
+            </div>
+            <div class="col-xl-2 mb-2 mb-xl-0">
+              <div class="w-100 d-flex justify-content-center">
+                <button type="btn" data-src="#popup_order" data-fancybox class="btn btn_red cart__item-btn">
+                  <div class="w-100 d-flex justify-content-center align-items-center">
+                    <span class="d-xl-none">Добавить комментарий</span>
+                    <span class="d-none d-xl-block">+</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div class="col-xl-1">
+              <div class="w-100 d-flex justify-content-center">
+                <button type="button" class="btn cart__item-btn d-flex justify-content-center align-items-center">
+                  <span class="d-xl-none mr-1">Удалить</span>
+                  <svg width="16" height="18" viewBox="0 0 16 18" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4.09091C0 3.63904 0.358172 3.27273 0.8 3.27273H15.2C15.6418 3.27273 16 3.63904 16 4.09091C16 4.54278 15.6418 4.90909 15.2 4.90909H0.8C0.358172 4.90909 0 4.54278 0 4.09091Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.4 1.63636C6.18783 1.63636 5.98434 1.72253 5.83431 1.87597C5.68428 2.0294 5.6 2.23755 5.6 2.45455V3.27273H10.4V2.45455C10.4 2.23755 10.3157 2.0294 10.1657 1.87597C10.0157 1.72253 9.81217 1.63636 9.6 1.63636H6.4ZM12 3.27273V2.45455C12 1.80356 11.7471 1.17922 11.2971 0.718905C10.847 0.258589 10.2365 0 9.6 0H6.4C5.76348 0 5.15303 0.258589 4.70294 0.718905C4.25285 1.17922 4 1.80356 4 2.45455V3.27273H2.4C1.95817 3.27273 1.6 3.63904 1.6 4.09091V15.5455C1.6 16.1964 1.85285 16.8208 2.30294 17.2811C2.75303 17.7414 3.36348 18 4 18H12C12.6365 18 13.247 17.7414 13.6971 17.2811C14.1471 16.8208 14.4 16.1964 14.4 15.5455V4.09091C14.4 3.63904 14.0418 3.27273 13.6 3.27273H12ZM3.2 4.90909V15.5455C3.2 15.7625 3.28429 15.9706 3.43431 16.124C3.58434 16.2775 3.78783 16.3636 4 16.3636H12C12.2122 16.3636 12.4157 16.2775 12.5657 16.124C12.7157 15.9706 12.8 15.7624 12.8 15.5455V4.90909H3.2Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.4 7.36364C6.84183 7.36364 7.2 7.72995 7.2 8.18182V13.0909C7.2 13.5428 6.84183 13.9091 6.4 13.9091C5.95817 13.9091 5.6 13.5428 5.6 13.0909V8.18182C5.6 7.72995 5.95817 7.36364 6.4 7.36364Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.6 7.36364C10.0418 7.36364 10.4 7.72995 10.4 8.18182V13.0909C10.4 13.5428 10.0418 13.9091 9.6 13.9091C9.15817 13.9091 8.8 13.5428 8.8 13.0909V8.18182C8.8 7.72995 9.15817 7.36364 9.6 7.36364Z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cart__item col-xl-12 col-sm-6 col-12 mb-2 mb-sm-0 mb-xl-3">
+          <div class="row align-items-xl-center">
+            <div class="col-xl-2">
+              <a href="#" class="cart__item-img mb-2 mb-xl-0" style="background-image: url(img/card__slider-bot_1.jpg)"></a>
+            </div>
+            <div class="col-xl-3 mb-2 mb-xl-0">
+              <a href="#">Артикул 5402.08 Флешка «Ключ», 8 Гб</a>
+            </div>
+            <div class="col-xl-2 mb-2 mb-xl-0">
+              <div class="d-flex flex-column align-items-center">
+                <span class="d-xl-none mb-1 fz13">Количество</span>
+                <div class="quantity w-100 d-flex justify-content-center">
+                  <button type="button" class="quantity-minus"><span>-</span></button>
+                  <input type="number" min="1" value="10000" class="quantity-num">
+                  <button type="button" class="quantity-plus"><span>+</span></button>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-1 tac mb-2 mb-xl-0">
+              <div class="d-flex justify-content-center align-items-center">
+                <span class="d-xl-none mr-1">Цена:</span>
+                <span>389,00 Р</span>
+              </div>
+            </div>
+            <div class="col-xl-1 tac bold mb-2 mb-xl-0">
+              <div class="d-flex justify-content-center align-items-center">
+                <span class="d-xl-none mr-1">Сумма:</span>
+                <span>11281,00&nbsp;Р</span>
+              </div>
+            </div>
+            <div class="col-xl-2 mb-2 mb-xl-0">
+              <div class="w-100 d-flex justify-content-center">
+                <button type="btn" data-src="#popup_order" data-fancybox class="btn btn_red cart__item-btn">
+                  <div class="w-100 d-flex justify-content-center align-items-center">
+                    <span class="d-xl-none">Добавить комментарий</span>
+                    <span class="d-none d-xl-block">+</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div class="col-xl-1">
+              <div class="w-100 d-flex justify-content-center">
+                <button type="button" class="btn cart__item-btn d-flex justify-content-center align-items-center">
+                  <span class="d-xl-none mr-1">Удалить</span>
+                  <svg width="16" height="18" viewBox="0 0 16 18" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4.09091C0 3.63904 0.358172 3.27273 0.8 3.27273H15.2C15.6418 3.27273 16 3.63904 16 4.09091C16 4.54278 15.6418 4.90909 15.2 4.90909H0.8C0.358172 4.90909 0 4.54278 0 4.09091Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.4 1.63636C6.18783 1.63636 5.98434 1.72253 5.83431 1.87597C5.68428 2.0294 5.6 2.23755 5.6 2.45455V3.27273H10.4V2.45455C10.4 2.23755 10.3157 2.0294 10.1657 1.87597C10.0157 1.72253 9.81217 1.63636 9.6 1.63636H6.4ZM12 3.27273V2.45455C12 1.80356 11.7471 1.17922 11.2971 0.718905C10.847 0.258589 10.2365 0 9.6 0H6.4C5.76348 0 5.15303 0.258589 4.70294 0.718905C4.25285 1.17922 4 1.80356 4 2.45455V3.27273H2.4C1.95817 3.27273 1.6 3.63904 1.6 4.09091V15.5455C1.6 16.1964 1.85285 16.8208 2.30294 17.2811C2.75303 17.7414 3.36348 18 4 18H12C12.6365 18 13.247 17.7414 13.6971 17.2811C14.1471 16.8208 14.4 16.1964 14.4 15.5455V4.09091C14.4 3.63904 14.0418 3.27273 13.6 3.27273H12ZM3.2 4.90909V15.5455C3.2 15.7625 3.28429 15.9706 3.43431 16.124C3.58434 16.2775 3.78783 16.3636 4 16.3636H12C12.2122 16.3636 12.4157 16.2775 12.5657 16.124C12.7157 15.9706 12.8 15.7624 12.8 15.5455V4.90909H3.2Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.4 7.36364C6.84183 7.36364 7.2 7.72995 7.2 8.18182V13.0909C7.2 13.5428 6.84183 13.9091 6.4 13.9091C5.95817 13.9091 5.6 13.5428 5.6 13.0909V8.18182C5.6 7.72995 5.95817 7.36364 6.4 7.36364Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.6 7.36364C10.0418 7.36364 10.4 7.72995 10.4 8.18182V13.0909C10.4 13.5428 10.0418 13.9091 9.6 13.9091C9.15817 13.9091 8.8 13.5428 8.8 13.0909V8.18182C8.8 7.72995 9.15817 7.36364 9.6 7.36364Z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-column flex-xl-row justify-content-xl-end align-items-center mt-3 mt-xl-3">
+        <div class="upload__file-wrp">
+          <input type="file" name="" id="upload__file_1" class="upload__file" placeholder="Выберите файл">
+          <label for="upload__file_1" class="filename btn btn_red">
+            <div class="d-flex align-items-center">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.96143 1.1499C8.4786 1.1499 8.01554 1.33176 7.67413 1.65548L2.1014 6.93929C1.53242 7.47877 1.21278 8.21047 1.21278 8.97341C1.21278 9.73635 1.53242 10.4681 2.1014 11.0075C2.67038 11.547 3.44209 11.8501 4.24675 11.8501C5.05141 11.8501 5.82312 11.547 6.3921 11.0075L11.9648 5.72372C12.2016 5.49919 12.5856 5.49919 12.8224 5.72372C13.0592 5.94826 13.0592 6.31228 12.8224 6.53681L7.24966 11.8206C6.45324 12.5757 5.37306 13 4.24675 13C3.12044 13 2.04025 12.5757 1.24383 11.8206C0.447412 11.0655 0 10.0413 0 8.97341C0 7.90549 0.447412 6.88133 1.24383 6.1262L6.81656 0.84239C7.38541 0.303028 8.15695 0 8.96143 0C9.76591 0 10.5374 0.303028 11.1063 0.84239C11.6752 1.38175 11.9947 2.11328 11.9947 2.87606C11.9947 3.63883 11.6752 4.37036 11.1063 4.90972L5.5275 10.1935C5.18621 10.5171 4.72333 10.6989 4.24068 10.6989C3.75803 10.6989 3.29514 10.5171 2.95386 10.1935C2.61257 9.86994 2.42084 9.43104 2.42084 8.97341C2.42084 8.51578 2.61257 8.07688 2.95386 7.75329L8.10236 2.87746C8.33931 2.65306 8.72326 2.65329 8.95993 2.87795C9.1966 3.10262 9.19638 3.46664 8.95943 3.69104L3.81142 8.56641C3.69774 8.67433 3.63362 8.82087 3.63362 8.97341C3.63362 9.12607 3.69758 9.27246 3.81142 9.38041C3.92527 9.48835 4.07968 9.54899 4.24068 9.54899C4.40168 9.54899 4.55611 9.48835 4.66995 9.38041L10.2487 4.0966C10.59 3.77291 10.782 3.33375 10.782 2.87606C10.782 2.41826 10.5901 1.97919 10.2487 1.65548C9.90732 1.33176 9.44426 1.1499 8.96143 1.1499Z"/>
+              </svg>
+              <span class="ml-2 reg">Прикрепить макет</span>
+            </div>
+          </label>
+        </div>
+        <div class="d-flex flex-column align-items-xl-end ml-xl-5 mt-3 mt-xl-0">
+          <div class="mb-2">Товаров на: <span class="bold">12 785,00 Р</span></div>
+          <div>В том числе НДС: <span class="bold">2 557,00 Р</span></div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mt-xl-5 mt-3">
+        <button type="button" data-src="#popup_order" data-fancybox class="btn btn_red reg">Оформить заявку</button>
       </div>
     </div>
   </main>
-  <section class="section_inner feed" style="background-image: url(img/feed_coop__bg.jpg)">
-    <div class="container">
-      <div class="section__ttl mb-2">Хотите сотрудничать?</div>
-      <div class="tac fz16">
-        Отправьте запрос нашим специалистам.<br> Мы отвечаем на все запросы в течение 15 минут
-      </div>
-      <div class="feed__in mt-3 mt-xl-4">
-        <div class="row">
-          <div class="col-xl-4 mb-3">
-            <input type="text" placeholder="Ваше имя*" class="w-100">
-          </div>
-          <div class="col-xl-4 mb-3">
-            <input type="email" placeholder="Ваш e-mail*" class="w-100">
-          </div>
-          <div class="col-xl-4 mb-3">
-            <input type="tel" placeholder="Ваш телефон*" class="w-100">
-          </div>
-          <div class="col-12 mb-3">
-            <textarea cols="30" rows="4" class="w-100" placeholder="Ваше сообщение"></textarea>
-          </div>
-        </div>
-        <div class="d-flex flex-column align-items-center">
-          <div class="feed__captcha"></div>
-          <button type="submit" class="btn btn_red mt-3 mb-3">Отправить сообщение</button>
-          <label for="feed__checkbox" class="checkbox ">
-            <input type="checkbox" id="feed__checkbox" required="" checked>
-            <span class="checkbox__text">Нажимая кнопку «Отправить сообщение», я даю согласие на обработку своих <a href="#">персональных данных</a>.</span>
-          </label>
-        </div>
-      </div>
-    </div>
-  </section>
   <footer class="footer">
     <div class="container">
       <div class="footer__top mb-3">
@@ -623,7 +779,7 @@
         <div class="mb-3 fz18">Мы ответим или перезвоним в течение 15 минут</div>
         <svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="54" cy="54" r="54" fill="#27AE60"/>
-          <path d="M21.5 51L45 74.5L85.5 34" stroke="white" stroke-width="10"/>
+          <path d="M21.5 51L45 74.5L85.5 34" stroke="wcate" stroke-width="10"/>
         </svg>
       </form>
     </div>
@@ -637,7 +793,7 @@
         <div class="mb-3 fz18">Мы будем присылать информацию о новинках, распродажах и подборках сувениров. И ничего лишнего.</div>
         <svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="54" cy="54" r="54" fill="#27AE60"/>
-          <path d="M21.5 51L45 74.5L85.5 34" stroke="white" stroke-width="10"/>
+          <path d="M21.5 51L45 74.5L85.5 34" stroke="wcate" stroke-width="10"/>
         </svg>
       </form>
     </div>
@@ -650,7 +806,7 @@
         <div class="section__ttl mb-3">Товар успешно добавлен в корзину</div>
         <svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="54" cy="54" r="54" fill="#27AE60"/>
-          <path d="M21.5 51L45 74.5L85.5 34" stroke="white" stroke-width="10"/>
+          <path d="M21.5 51L45 74.5L85.5 34" stroke="wcate" stroke-width="10"/>
         </svg>
         <div class="w-100 d-flex align-items-center mt-3">
           <a href="#" class="btn btn_red w-100 mr-3">Перейти в корзину</a>
@@ -667,7 +823,7 @@
         <div class="section__ttl mb-3">Ваша заявка отправлена</div>
         <svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="54" cy="54" r="54" fill="#27AE60"/>
-          <path d="M21.5 51L45 74.5L85.5 34" stroke="white" stroke-width="10"/>
+          <path d="M21.5 51L45 74.5L85.5 34" stroke="wcate" stroke-width="10"/>
         </svg>
         <div class="popup_call__col mt-3">
           <button type="button" class="btn btn_red fancybox-close__btn">Продолжить покупки</button>
