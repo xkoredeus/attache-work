@@ -421,7 +421,17 @@ $(function() {
         }
       }
   });
-  // if ( $(window).width() > 1200 ) {
-  //  $('.selectmenu').selectmenu();
-  // }
+  if ( $(window).width() > 1200 ) {
+   $('.selectmenu').selectmenu({
+    width: 110
+   });
+  } else {
+    $('.selectmenu').selectmenu({});
+  }
+
+  $('.show-filter').on('click', function() {
+    $(this).toggleClass('active');
+    $('.cat-tabs').slideToggle();
+    $('.cat-filter').slideToggle();
+  })
 });

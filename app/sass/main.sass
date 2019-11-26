@@ -329,6 +329,19 @@ a.wt
         color: #fff
     &__cnt
       transition: unset
+.upload__file
+  width: 0.1px
+  height: 0.1px
+  opacity: 0
+  overflow: hidden
+  position: absolute
+  z-index: -1
+  &-wrp
+    cursor: pointer
+    label.filename
+      cursor: pointer
+      margin-bottom: 0
+      cursor: pointer
 .checkbox
   cursor: pointer
   position: relative
@@ -2017,6 +2030,35 @@ div
       background-color: $lgr
     &__link
       padding: 9px 15px
+    +r(1200)
+      display: none
+  &__btn
+    position: relative
+    color: #fff
+    text-align: center
+    padding: 12px 25px
+    background-color: $red
+    border-radius: 3px
+    box-shadow: 0px 10px 10px rgba(98, 98, 98, 0.15)
+    margin-bottom: 40px
+    margin-left: auto
+    margin-right: auto
+    &::after
+      position: absolute
+      content: ''
+      width: 100%
+      height: 1px
+      left: 0
+      bottom: -20px
+      background-color: #e4e1e1
+    &.active
+      svg
+        transform: scaleY(-1)
+    svg
+      +ease
+      stroke: #fff
+    +r(600)
+      width: 100%
   &-tabs
     .tabs
       &__list
@@ -2035,6 +2077,10 @@ div
           border-radius: 3px
           +ease
           cursor: pointer
+          margin-bottom: 5px
+          +r(600)
+            text-align: center
+            width: 100%
           &:hover
             color: $red
           &.active
@@ -2044,19 +2090,28 @@ div
             cursor: unset
           &:not(:last-child)
             margin-right: 6px
+    +r(1200)
+      display: none
   &-filter
     padding-bottom: 20px
     margin-bottom: 20px
     border-bottom: 1px solid #e4e1e1
+    +r(600)
+      text-align: center
     &__top
       &>*
         margin-bottom: 5px
         &:not(:last-child)
           margin-right: 6px
+          +r(600)
+            margin-right: 0
     .select__wrp
       background-color: $lgr
-      // border: none
-      // +r(1200)
+      border: none
+      +r(1200)
+        width: 100%
+        .ui-selectmenu-button.ui-button
+          width: 100%
       //   border: 1px solid #BDBDBD
     &__checkbox
       .checkbox__text
@@ -2072,6 +2127,8 @@ div
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3)
         border-radius: 3px
         +ease
+        +r(1200)
+          text-align: center
         &:hover
           color: $red
         &::before
@@ -2082,7 +2139,16 @@ div
       input[type="radio"]:checked + .checkbox__text
         color: #fff
         background-color: $dark
+      &_sale
+        +r(600)
+          width: 100%
+      &_ord
+        +r(600)
+          width: 49%
+          margin-right: 5px
       &_excl
+        +r(600)
+          width: 49%
         .checkbox__text
           color: #fff
           background-color: $red
@@ -2093,6 +2159,8 @@ div
         input[type="radio"]:checked + .checkbox__text
           color: #fff
           background-color: $lred
+    +r(1200)
+      display: none
   &__item
     position: relative
     text-align: center
@@ -2108,6 +2176,9 @@ div
     flex-direction: column
     align-items: center
     overflow: hidden
+    +r(600)
+      min-height: auto
+      padding: 15px
     &:hover
       box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.2)
     &-img
@@ -2116,6 +2187,8 @@ div
       +ct
       margin-bottom: 12px
       +ease
+      +r(600)
+        height: 90px
       &:hover
         transform: scale(.96)
     &-ttl
@@ -2124,6 +2197,9 @@ div
       min-height: 40px
       display: flex
       align-items: center
+      +r(600)
+        font-size: 14px
+        min-height: auto
     &-price
       font-family: $g-bold
       font-size: 20px
@@ -2212,54 +2288,85 @@ div
                 background-color: $tr
                 svg
                   stroke: $red
-// .ui-button:focus,
-// .ui-button:hover,
-// .ui-state-focus,
-// .ui-state-hover,
-// .ui-widget-content .ui-state-focus,
-// .ui-widget-content .ui-state-hover,
-// .ui-widget-header .ui-state-focus,
-// .ui-widget-header .ui-state-hover
-//   color: #fff
-//   background: #282828
-//   border-color: $red
-//   .ui-icon
-//     opacity: 1 !important
-// .ui-button .ui-icon,
-// .ui-button:focus .ui-icon,
-// .ui-button:hover .ui-icon,
-// .ui-state-focus .ui-icon,
-// .ui-state-hover .ui-icon
-//   background-image: url('../img/icon__arr_bot-blck.svg')
-//   background-position: 50% 50%
-//   background-size: contain
-//   margin-top: 4px
-//   width: 11px
-//   height: 10px
-//   opacity: .6
-//   // background: #000
-// .ui-selectmenu-button
-//   font-family: $g-med
-//   font-size: 14px
-//   color: #A0A0A0
-//   outline: none
-//   background: #282828
-//   border: 1px solid #282828
-//   box-sizing: border-box
-//   border-radius: 3px
-//   // min-width: 200px
-//   padding: 14px 15px
-//   &:hover
-//     color: #fff
-//     background: #282828
-// .ui-selectmenu-button-open
-//   border-bottom-left-radius: 0px
-//   border-bottom-right-radius: 0px
-//   background-color: #282828
-//   color: #A0A0A0
-//   .ui-icon
-//     transform: scaleY(-1)
-//     opacity: 1 !important
+.ui-selectmenu-menu .ui-menu
+  max-height: 330px
+  overflow-y: scroll
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.3)
+  &::-webkit-scrollbar-track
+    background-color: $lgr
+  &::-webkit-scrollbar
+    width: 5px
+    background-color: #575757
+  &::-webkit-scrollbar-thumb
+    width: 10px
+    background-color: #575757
+    border: 2px solid $red
+    border-radius: 6px
+.ui-button:focus,
+.ui-button:hover,
+.ui-state-focus,
+.ui-state-hover,
+.ui-widget-content .ui-state-focus,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-focus,
+.ui-widget-header .ui-state-hover
+  color: $dark
+  background: #fff
+  border-color: $dark
+  .ui-icon
+    opacity: 1 !important
+.ui-button .ui-icon,
+.ui-button:focus .ui-icon,
+.ui-button:hover .ui-icon,
+.ui-state-focus .ui-icon,
+.ui-state-hover .ui-icon
+  background-image: url('../img/icon__arr_bot-blck.svg')
+  background-position: 50% 50%
+  background-size: contain
+  margin-top: 4px
+  width: 11px
+  height: 10px
+  opacity: .6
+  // background: #000
+.ui-selectmenu-button
+  font-family: $g-reg
+  font-size: 14px
+  color: $dark
+  height: 46px
+  line-height: 1.1
+  outline: none
+  background: #fff
+  border: 1px solid $dark
+  box-sizing: border-box
+  border-radius: 3px
+  // min-width: 200px
+  padding: 14px 15px
+  +ease
+  &:hover
+    color: $dark
+    background: $gr
+.ui-selectmenu-button-open
+  border-bottom-left-radius: 0px
+  border-bottom-right-radius: 0px
+  background-color: $gr
+  color: $dark
+  .ui-icon
+    transform: scaleY(-1)
+    opacity: 1 !important
+.ui-menu .ui-menu-item-wrapper
+  padding: 6px 15px
+  text-decoration: underline
+.ui-menu-item-wrapper.ui-state-active
+  text-decoration: none
+.ui-button.ui-state-active:hover,
+.ui-button:active,
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active
+  color: $red
+  background: #fff
+  border-color: $tr !important
 .card
   &__slider
     &-top
@@ -2484,19 +2591,6 @@ div
         height: auto
         font-size: 13px
         padding: 12px 15px
-.upload__file
-  width: 0.1px
-  height: 0.1px
-  opacity: 0
-  overflow: hidden
-  position: absolute
-  z-index: -1
-  &-wrp
-    cursor: pointer
-    label.filename
-      cursor: pointer
-      margin-bottom: 0
-      cursor: pointer
 .prod
   &__item
     width: 100%

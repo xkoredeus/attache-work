@@ -377,6 +377,16 @@
           </aside>
         </div>
         <div class="col-xl-9">
+          <div class="d-flex justify-content-center">
+            <button type="button" class="cat__btn show-filter d-xl-none">
+              <div class="d-flex justify-content-center align-items-center">
+                <span class="mr-2">Фильтр</span>
+                <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.69434 1L6.81198 6L11.9296 1" stroke-width="2"/>
+                </svg>
+              </div>
+            </button>
+          </div>
           <div class="cat-tabs tabs">
             <ul class="tabs__list">
               <li data-item="1" class="active">Футболки с принтом</li>
@@ -385,11 +395,12 @@
             </ul>
           </div>
           <form class="cat-filter">
-            <div class="cat-filter__top d-flex flex-wrap align-items-center w-100">
+            <div class="cat-filter__top d-flex justify-content-between justify-content-sm-start flex-wrap align-items-center w-100">
               <div class="select__wrp">
                 <select class="selectmenu">
                   <option value="По цене">По цене</option>
                   <option value="По цене">По цене</option>
+                  
                 </select>
               </div>
               <div class="select__wrp">
@@ -400,9 +411,19 @@
               </div>
               <div class="select__wrp">
                 <select class="selectmenu">
-                  <option value="Цвет">Цвет</option>
-                  <option value="Бренды">Бренды</option>
-                  <option value="Бренды">Бренды</option>
+                  <option value="" disabled="" selected="" hidden="">Цвет</option>
+                  <option value="Белый">Белый</option>
+                  <option value="Черный">Черный</option>
+                  <option value="Красно-зеленый ">Красно-зеленый </option>
+                  <option value="Серобуромалиновый">Серобуромалиновый</option>
+                  <option value="Белый">Белый</option>
+                  <option value="Черный">Черный</option>
+                  <option value="Красно-зеленый ">Красно-зеленый </option>
+                  <option value="Серобуромалиновый">Серобуромалиновый</option>
+                  <option value="Белый">Белый</option>
+                  <option value="Черный">Черный</option>
+                  <option value="Красно-зеленый ">Красно-зеленый </option>
+                  <option value="Серобуромалиновый">Серобуромалиновый</option>
                 </select>
               </div>
               <div class="select__wrp">
@@ -412,11 +433,11 @@
                   <option value="Бренды">Бренды</option>
                 </select>
               </div>
-              <label for="filter__checkbox_1" class="checkbox cat-filter__checkbox">
+              <label for="filter__checkbox_1" class="checkbox cat-filter__checkbox cat-filter__checkbox_sale">
                 <input type="checkbox" id="filter__checkbox_1">
                 <span class="checkbox__text">Распродажа</span>
               </label>
-              <label for="filter__checkbox_2" class="checkbox cat-filter__checkbox">
+              <label for="filter__checkbox_2" class="checkbox cat-filter__checkbox cat-filter__checkbox_ord">
                 <input type="checkbox" id="filter__checkbox_2">
                 <span class="checkbox__text">Под заказ</span>
               </label>
