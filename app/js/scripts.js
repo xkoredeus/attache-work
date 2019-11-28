@@ -404,7 +404,10 @@ $(function() {
   $('.excl__slider').owlCarousel({
       nav: false,
       items: 1,
-      loop: false,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      autoplayHoverPause: true,
       dots: true,
       smartSpeed: 800,
   });
@@ -435,7 +438,7 @@ $(function() {
   });
   if ( $(window).width() > 1200 ) {
    $('.selectmenu').selectmenu({
-    width: 110
+    width: 90
    });
   } else {
     $('.selectmenu').selectmenu({});

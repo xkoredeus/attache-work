@@ -38,7 +38,7 @@ $g-med: 'GothamPro-Medium'
 body
   scroll-behavior: smooth
   background-color: #fff
-  font-family: $g-reg
+  font-family: $g-reg, Roboto, sans-serif
   color: $dark
   font-size: 14px
   line-height: 1.4
@@ -508,12 +508,16 @@ a.wt
       &__col
         max-width: 370px
         width: 100%
-    &_success
+    &_succ
       &__wrp
         max-width: 770px
         .popup
-          min-height: 181px
+          min-height: 320px
+          min-width: 700px
           justify-content: center
+          +r(1200)
+            min-width: unset
+            min-height: 180px
         span
           color: #27AE60
     &_coop
@@ -1774,11 +1778,12 @@ a.wt
 .footer
   color: #fff
   background-color: $dark
-  padding-top: 40px
+  padding-top: 100px
   padding-bottom: 40px
   +r(1200)
     text-align: center
     font-size: 12px
+    padding-top: 40px
   &__top
     &-ttl
       font-family: $g-bold
@@ -2095,6 +2100,8 @@ div
     margin-left: calc(-1110px/2)
     color: #fff
     max-width: 587px
+    border-radius: 3px
+    overflow: hidden
     +r(1200)
       position: relative
       max-width: unset
@@ -2105,11 +2112,11 @@ div
       background-color: $dark
     &-top
       color: #fff
-      padding: 25px 15px
+      padding: 25px 35px
       background-color: #cb0909a8
     &-img
       width: 100%
-      height: 150px
+      height: 180px
       +cv
   &__req-link
     color: $red
@@ -2188,7 +2195,7 @@ div
   &-side
     position: sticky
     left: 0
-    top: 70px
+    top: 97px
     background-color: #fff
     border: 1px solid #E3E3E3
     border-radius: 3px
@@ -2287,6 +2294,10 @@ div
     .select__wrp
       background-color: $lgr
       border: none
+      &:nth-child(4)
+        +rmin(1200)
+          .ui-selectmenu-button.ui-button
+            width: 110px !important
       +r(1200)
         width: 100%
         .ui-selectmenu-button.ui-button
@@ -2294,7 +2305,7 @@ div
       //   border: 1px solid #BDBDBD
     &__checkbox
       .checkbox__text
-        font-size: 15px
+        font-size: 14px
         position: relative
         padding-left: 0
         cursor: pointer
@@ -2305,6 +2316,14 @@ div
         background-color: #FFFFFF
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3)
         border-radius: 3px
+        &>div
+          margin-right: -8px
+        svg
+          +ease
+          fill: #fff
+          transform: scale(0)
+          opacity: 0
+          margin-top: 2px
         +ease
         +r(1200)
           text-align: center
@@ -2318,6 +2337,12 @@ div
       input[type="radio"]:checked + .checkbox__text
         color: #fff
         background-color: $dark
+        &>div
+          margin-right: 0
+        svg
+          transform: scale(1)
+          opacity: 1
+          margin-left: 6px
       &_sale
         +r(600)
           width: 100%
@@ -2506,7 +2531,7 @@ div
   width: 11px
   height: 10px
   opacity: .6
-  // background: #000
+  +ease
 .ui-selectmenu-button
   font-family: $g-reg
   font-size: 14px
@@ -2519,11 +2544,13 @@ div
   box-sizing: border-box
   border-radius: 3px
   // min-width: 200px
-  padding: 14px 15px
+  padding: 14px 9px
   +ease
   &:hover
     color: $dark
     background: $gr
+.ui-selectmenu-text
+  margin-right: 10px
 .ui-selectmenu-button-open
   border-bottom-left-radius: 0px
   border-bottom-right-radius: 0px
@@ -2638,7 +2665,7 @@ a.ui-button:active
         li
           position: relative
           font-family: $g-bold
-          padding: 15px 25px
+          padding: 14px 35px
           background-color: $gr
           cursor: pointer
           +ease
@@ -2732,20 +2759,29 @@ a.ui-button:active
             fill: $red
 .cart
   &__list
+    +r(1200)
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
     +r(600)
       margin-left: 0
       margin-right: 0
+    &-top
+      padding-left: 15px
+      padding-right: 15px
   &__item
     background-color: #fff
     border: 1px solid $gr
     border-radius: 3px
-    padding-top: 20px
-    padding-bottom: 20px
+    padding: 20px 15px
     +r(1200)
       font-size: 13px
       text-align: center
       padding-top: 15px
       padding-bottom: 25px
+      width: 49%
+    +r(600)
+      width: 100%
     &-img
       width: 90px
       height: 90px
@@ -2890,5 +2926,7 @@ a.ui-button:active
         button.owl
           &-prev
             left: 0
+            box-shadow: inset 0px 0px 0px 2px $tr
           &-next
             right: 0
+            box-shadow: inset 0px 0px 0px 2px $tr
