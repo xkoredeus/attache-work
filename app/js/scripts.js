@@ -1,44 +1,80 @@
-$(function() {
+$(() => {
   //sticky header
   if ( $(window).width() > 1200 ) {
-    $(window).scroll(function() {
-      if ($(this).scrollTop() > 4) {
-        $('body').addClass('sticky');
-        $('.header__col:nth-child(2)').removeClass('col-xl-2').addClass('col-xl-6');
-        $('.header__col:nth-child(3)').removeClass('col-xl-5').addClass('col-xl-6');
-      }
-      else {
-        $('body').removeClass('sticky');
-        $('.header__col:nth-child(2)').removeClass('col-xl-6').addClass('col-xl-2');
-        $('.header__col:nth-child(3)').removeClass('col-xl-6').addClass('col-xl-5');
-      }
+    $(window)
+      .scroll(function windowScroll() {
+        if ($(this).scrollTop() > 4) {
+          $('body').addClass('sticky');
+          $('.header__col:nth-child(2)')
+            .removeClass('col-xl-2')
+            .addClass('col-xl-6');
+          $('.header__col:nth-child(3)')
+            .removeClass('col-xl-5')
+            .addClass('col-xl-6');
+        }
+        else {
+          $('body').removeClass('sticky');
+          $('.header__col:nth-child(2)')
+            .removeClass('col-xl-6')
+            .addClass('col-xl-2');
+          $('.header__col:nth-child(3)')
+            .removeClass('col-xl-6')
+            .addClass('col-xl-5');
+        }
     });
+  } else {
+    $(window)
+      .scroll( function windowScroll() {
+        $('.header__hamb').removeClass('active');
+        $('.main-nav').slideUp(0);
+
+        if ($(this).scrollTop() > 260) {
+          $('body').addClass('sticky');
+        }
+        else {
+          $('body').removeClass('sticky');
+        }
+      });
   }
-  if ( $(window).width() < 1199 ) {
-    $(window).scroll(function() {
-      if ($(this).scrollTop() > 260) {
-        $('body').addClass('sticky');
-      }
-      else {
-        $('body').removeClass('sticky');
-      }
-    });
-  }
-  $('.nav-cat').hover(function() {
+});
+
+$(() => {
+  $('.nav-cat')
+    .hover(function navCatHover() {
     $(this)
       .toggleClass('active')
       .find('.nav-cat__list')
       .slideToggle(0);
   });
-  $('.header-cat').hover(function() {
+});
+
+$(() => {
+  $('.header-cat')
+    .hover(function headerCatHover() {
     $(this)
       .toggleClass('active')
       .find('.header-cat__list')
       .slideToggle(0);
   });
-  $('.header__search-opt').on('click', function(){
-    $(this).next('.header__search-pop').slideToggle(0);
+});
+
+$(() => {
+  $('.header__search-opt')
+    .on('click', function headerOptClick(){
+    $(this).next('.header__search-pop')
+    .slideToggle(0);
   });
+  $(document).on('click', (e) => {
+    const searchContainer = $('.header__search');
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!searchContainer.is(e.target) && searchContainer.has(e.target).length === 0) {
+      searchContainer.removeClass('active');
+      $('.header__search-pop').slideUp();
+    }
+  });
+})
+
+$(() => {
   $('.banner').owlCarousel({
       nav: false,
       items: 1,
@@ -46,312 +82,302 @@ $(function() {
       dots: true,
       smartSpeed: 800,
   });
+});
+
+$(() => {
   $('.hit__in').owlCarousel({
-      nav: true,
-      loop: false,
-      smartSpeed: 800,
-      startPosition: 0,
-
-      margin: 15,
-      navText: ["<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg>","<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg>"],
-      responsive : {
-        0   : {
-            items: 1,
-            dots: false,
-        },
-        380 : {
-            items: 1,
-            dots: false,
-        },
-        480 : {
-            items: 1,
-            dots: false,
-        },
-        600 : {
-            items: 2,
-            dots: false,
-        },
-        900 : {
-            items: 3,
-            dots: false,
-        },
-        1200 : {
-            items: 4,
-            dots: true,
-        }
+    nav: true,
+    loop: false,
+    smartSpeed: 800,
+    mouseDrag: false,
+    margin: 15,
+    navText: ["<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg></span>","<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span>"],
+    responsive : {
+      0   : {
+          items: 1,
+          dots: false,
       },
-      onTranslated: setCls,
-  });
-  // .on("translated.owl.carousel", setCls);
-  function setCls() {
-    $(".owl-item").removeClass("red").filter(".active").eq(1).addClass("red")
+      380 : {
+          items: 1,
+          dots: false,
+      },
+      480 : {
+          items: 1,
+          dots: false,
+      },
+      600 : {
+          items: 2,
+          dots: false,
+      },
+      900 : {
+          items: 3,
+          dots: false,
+      },
+      1200 : {
+          items: 4,
+          dots: true,
+      }
+    }
+  }).on({"translated.owl.carousel": setHitCls, "translate.owl.carousel": remHitCls});
+
+  function setHitCls() {
+    $(".owl-item").filter(".active").eq(4).addClass("more-left")
   }
-  setCls();
-  $('.hit__item-colors').owlCarousel({
-    nav: true,
-    loop: false,
-    dots: false,
-    smartSpeed: 800,
-    navText: ["<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg>","<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg>"],
-    margin: 5,
-    items: 3,
-  });
+  function remHitCls() {
+    $(".owl-item").removeClass("more-left")
+  }
+  setHitCls();
+});
 
-
+$(() => {
   $('.view__in').owlCarousel({
-      nav: true,
-      loop: false,
-      smartSpeed: 800,
-      startPosition: 0,
+    nav: true,
+    loop: false,
+    smartSpeed: 800,
+    startPosition: 0,
 
-      margin: 15,
-      navText: ["<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg>","<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg>"],
-      responsive : {
-        0   : {
-            items: 1,
-            dots: false,
-        },
-        380 : {
-            items: 1,
-            dots: false,
-        },
-        480 : {
-            items: 1,
-            dots: false,
-        },
-        600 : {
-            items: 2,
-            dots: false,
-        },
-        900 : {
-            items: 3,
-            dots: false,
-        },
-        1200 : {
-            items: 4,
-            dots: true,
-        }
+    margin: 15,
+    navText: ["<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg></span>","<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span>"],
+    responsive : {
+      0   : {
+          items: 1,
+          dots: false,
       },
+      380 : {
+          items: 1,
+          dots: false,
+      },
+      480 : {
+          items: 1,
+          dots: false,
+      },
+      600 : {
+          items: 2,
+          dots: false,
+      },
+      900 : {
+          items: 3,
+          dots: false,
+      },
+      1200 : {
+          items: 4,
+          dots: true,
+      }
+    },
   });
-  $('.cat__item-colors').owlCarousel({
+});
+
+$(() => {
+  $('.brand__in').owlCarousel({
     nav: true,
     loop: false,
     dots: false,
     smartSpeed: 800,
-    navText: ["<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg>","<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg>"],
-    margin: 5,
-    items: 3,
-  });
-  $('.hit__item-wrp').hover(function() {
-    $(this)
-    .find('.hit__item-more')
-    .slideToggle(0)
-    .parents('.owl-item.active')
-    .toggleClass('hover');
-  });
-  $('.cat__item-wrp').hover(function() {
-    $(this)
-    .find('.cat__item-more')
-    .slideToggle(0)
-  });
-  $('.brand__in').owlCarousel({
-      nav: true,
-      loop: false,
-      dots: false,
-      smartSpeed: 800,
-      margin: 30,
-      navText: ["<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg>","<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg>"],
-      responsive : {
-        0   : {
-            items: 1
-        },
-        380 : {
-            items: 2
-        },
-        600 : {
-            items: 3
-        },
-        900 : {
-            items: 4
-        },
-        1200 : {
-            items: 6
-        }
-      }
-  });
-  $('.news__in').owlCarousel({
-      nav: true,
-      loop: false,
-      dots: false,
-      smartSpeed: 800,
-      margin: 30,
-      navText: ["<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg>","<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg>"],
-      responsive : {
-        0   : {
-            items: 1
-        },
-        380 : {
-            items: 1
-        },
-        600 : {
-            items: 1
-        },
-        900 : {
-            items: 2
-        },
-        1200 : {
-            items: 3
-        }
-      }
-  });
-  $('.cert__in').owlCarousel({
-      nav: true,
-      loop: false,
-      dots: false,
-      smartSpeed: 800,
-      margin: 30,
-      navText: ["<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg>","<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg>"],
-      responsive : {
-        0   : {
-            items: 1
-        },
-        380 : {
-            items: 2
-        },
-        600 : {
-            items: 3
-        },
-        900 : {
-            items: 4
-        },
-        1200 : {
-            items: 6
-        }
-      }
-  });
-  $('.port__in').owlCarousel({
-      nav: true,
-      loop: false,
-      dots: false,
-      smartSpeed: 800,
-      startPosition: 0,
-      margin: 15,
-      navText: ["<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg>","<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg>"],
-      responsive : {
-        0   : {
-            items: 1
-        },
-        380 : {
-            items: 1
-        },
-        480 : {
-            items: 1
-        },
-        600 : {
-            items: 2
-        },
-        900 : {
-            items: 3
-        },
-        1200 : {
-            items: 4
-        }
+    margin: 30,
+    navText: ["<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg></span>","<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span>"],
+    responsive : {
+      0   : {
+          items: 1
       },
-  });
-  $('.footer__top-ttl').on('click', function() {
-    $(this)
-    .toggleClass('active')
-    .next('.footer__top-list')
-    .slideToggle();
-  });
-  $('.cat-side__ttl').on('click', function(){
-    $(this)
-    .toggleClass('active')
-    .next('.cat-side__list')
-    .slideToggle();
-  });
-  // tabs 
-  $(document).ready(function () {
-    $(".tabs__content-item:not(:first-child)").hide();
-    $('ul.tabs__list > li').click(function () {
-      if (!($(this).hasClass('active'))) {
-        var thisLi = $(this);
-        var numLi = thisLi.index();
-        thisLi.addClass('active').siblings().removeClass('active');
-        thisLi.parent().next().children('div').hide().eq(numLi).fadeIn('slow');
+      380 : {
+          items: 2
+      },
+      600 : {
+          items: 3
+      },
+      900 : {
+          items: 4
+      },
+      1200 : {
+          items: 6
       }
-    });
-  });
-  //tabs data
-  $('ul.tabs__list > li').on('click', function() {
-    if (!($(this).hasClass('active'))) {
-      $(this)
-       .addClass('active')
-        .siblings()
-        .removeClass('active');
-      $('.tabs__content-item')
-        .hide()
-      $('.tabs__content-item[data-item="' + $(this).attr('data-item') + '"]')
-        .fadeIn('slow');
     }
   });
-  $('.fancybox-close__btn').on('click', function(){
-    $.fancybox.close();
-  });
-  //card slider
-  var sync1 = $('.card__slider-top');
-  var sync2 = $('.card__slider-bot');
+});
 
-  var thumbnailItemClass = '.owl-item';
-
-  var slides = sync1.owlCarousel({
-    startPosition: 0,
-    items:1,
-    loop:false,
-    margin:10,
-    nav: false,
-    navText: ["<img src='img/slider__arrow_prev.svg'>", "<img src='img/slider__arrow_next.svg'>"],
+$(() => {
+  $('.news__in').owlCarousel({
+    nav: true,
+    loop: false,
     dots: false,
-    smartSpeed: 700,
-    autoplay:false,
-    autoplayTimeout:6000,
-    autoplayHoverPause:false,
-  }).on('changed.owl.carousel', syncPosition);
+    smartSpeed: 800,
+    margin: 30,
+    navText: ["<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg></span>","<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span>"],
+    responsive : {
+      0   : {
+          items: 1
+      },
+      380 : {
+          items: 1
+      },
+      600 : {
+          items: 1
+      },
+      900 : {
+          items: 2
+      },
+      1200 : {
+          items: 3
+      }
+    }
+  });
+});
+
+$(() => {
+  $('.cert__in').owlCarousel({
+    nav: true,
+    loop: false,
+    dots: false,
+    smartSpeed: 800,
+    margin: 30,
+    navText: ["<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg></span>","<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span>"],
+    responsive : {
+      0   : {
+          items: 1
+      },
+      380 : {
+          items: 2
+      },
+      600 : {
+          items: 3
+      },
+      900 : {
+          items: 4
+      },
+      1200 : {
+          items: 6
+      }
+    }
+  });
+});
+
+$(() => {
+  $('.port__in').owlCarousel({
+    nav: true,
+    loop: false,
+    dots: false,
+    smartSpeed: 800,
+    startPosition: 0,
+    margin: 15,
+    navText: ["<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg></span>","<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span>"],
+    responsive : {
+      0   : {
+          items: 1
+      },
+      380 : {
+          items: 1
+      },
+      480 : {
+          items: 1
+      },
+      600 : {
+          items: 2
+      },
+      900 : {
+          items: 3
+      },
+      1200 : {
+          items: 4
+      }
+    },
+  });
+});
+
+$(() => {
+  $('.excl__slider').owlCarousel({
+    nav: false,
+    items: 1,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    dots: true,
+    smartSpeed: 800,
+  });
+});
+
+$(() => {
+  $('.excl-bot__slider').owlCarousel({
+    nav: true,
+    loop: false,
+    dots: false,
+    smartSpeed: 800,
+    margin: 30,
+    navText: ["<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg></span>","<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span>"],
+    responsive : {
+      0   : {
+          items: 1
+      },
+      380 : {
+          items: 1
+      },
+      600 : {
+          items: 1
+      },
+      900 : {
+          items: 2
+      },
+      1200 : {
+          items: 3
+      }
+    }
+  });
+});
+
+$(() => {
+  // card slider
+  const sync1 = $('.card__slider-top');
+  const sync2 = $('.card__slider-bot');
+
+  const thumbnailItemClass = '.owl-item';
 
   function syncPosition(el) {
-    $owl_slider = $(this).data('owl.carousel');
-    var loop = $owl_slider.options.loop;
+    const $owlSlider = $(this).data('owl.carousel');
+    const { loop } = $owlSlider.options;
 
-    if(loop){
-      var count = el.item.count-1;
-      var current = Math.round(el.item.index - (el.item.count/2) - .5);
-      if(current < 0) {
-          current = count;
+    let current = el.item.index;
+    if (loop) {
+      const count = el.item.count - 1;
+      current = Math.round(el.item.index - (el.item.count / 2) - 0.5);
+      if (current < 0) {
+        current = count;
       }
-      if(current > count) {
-          current = 0;
+      if (current > count) {
+        current = 0;
       }
-    }else{
-      var current = el.item.index;
     }
 
-    var owl_thumbnail = sync2.data('owl.carousel');
-    var itemClass = "." + owl_thumbnail.options.itemClass;
+    const owlThumbnail = sync2.data('owl.carousel');
+    const itemClass = `.${owlThumbnail.options.itemClass}`;
 
-
-    var thumbnailCurrentItem = sync2
-    .find(itemClass)
-    .removeClass("synced")
-    .eq(current);
+    const thumbnailCurrentItem = sync2
+      .find(itemClass)
+      .removeClass('synced')
+      .eq(current);
 
     thumbnailCurrentItem.addClass('synced');
 
     if (!thumbnailCurrentItem.hasClass('active')) {
-      var duration = 300;
-      sync2.trigger('to.owl.carousel',[current, duration, true]);
-    }   
+      const duration = 300;
+      sync2.trigger('to.owl.carousel', [current, duration, true]);
+    }
   }
-  var thumbs = sync2.owlCarousel({
+
+  sync1.owlCarousel({
+    startPosition: 0,
+    items: 1,
+    loop: false,
+    margin: 10,
+    nav: false,
+    dots: false,
+    smartSpeed: 700,
+    autoplay: false,
+    autoplayTimeout: 6000,
+    autoplayHoverPause: false,
+  }).on('changed.owl.carousel', syncPosition);
+
+
+  sync2.owlCarousel({
     startPosition: 0,
     items: 4,
     loop:false,
@@ -367,75 +393,145 @@ $(function() {
           items: 4
       }
     },
-    onInitialized: function (e) {
-      var thumbnailCurrentItem =  $(e.target).find(thumbnailItemClass).eq(this._current);
+    onInitialized(e) {
+      // eslint-disable-next-line no-underscore-dangle
+      const thumbnailCurrentItem = $(e.target).find(thumbnailItemClass).eq(this._current);
       thumbnailCurrentItem.addClass('synced');
     },
-  })
-  .on('click', thumbnailItemClass, function(e) {
-      e.preventDefault();
-      var duration = 300;
-      var itemIndex =  $(e.target).parents(thumbnailItemClass).index();
-      sync1.trigger('to.owl.carousel',[itemIndex, duration, true]);
-  }).on("changed.owl.carousel", function (el) {
-    var number = el.item.index;
-    $owl_slider = sync1.data('owl.carousel');
-    $owl_slider.to(number, 100, true);
-  });
-  //input type number
-  $( '.quantity' ).on( 'click', '.quantity-minus, .quantity-plus', function (e) {
+  }).on('click', thumbnailItemClass, (e) => {
     e.preventDefault();
-  var input = $( this ).siblings( '.quantity-num' );
+    const duration = 300;
+    const itemIndex = $(e.target).parents(thumbnailItemClass).index();
+    sync1.trigger('to.owl.carousel', [itemIndex, duration, true]);
+  }).on('changed.owl.carousel', (el) => {
+    const number = el.item.index;
+    const $owlSlider = sync1.data('owl.carousel');
+    $owlSlider.to(number, 100, true);
+  });
+})
+
+// TODO: destroy slick when mouseleave
+$(() => {
+  $('.hit__item-wrp').hover(function hitItemHover() {
+    $(this)
+    .find('.hit__item-more')
+    .slideToggle(0)
+    .parents('.owl-item')
+    .filter('.active')
+    .toggleClass('hover')
+    .find('.hit__item-colors').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      infinite: false,
+      prevArrow:"<button type='button' class='slick-prev pull-left'><span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg></span></button>",
+      nextArrow:"<button type='button' class='slick-next pull-right'><span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span></button>"
+    })
+  });
+});
+// TODO: destroy slick when mouseleave
+$(() => {
+  $('.cat__item-wrp').mouseenter(function catItemMouseEnter() {
+    $(this)
+      .find('.cat__item-more')
+      .slideDown(0)
+      .find('.cat__item-colors').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: false,
+        prevArrow:"<button type='button' class='slick-prev pull-left'><span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg></span></button>",
+        nextArrow:"<button type='button' class='slick-next pull-right'><span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span></button>"
+      });
+  });
+});
+$(() => {
+  $('.cat__item-wrp').mouseleave(function catItemMouseLeave() {
+    $(this)
+      .find('.cat__item-more')
+      .slideUp(0);
+    $('.cat__item-colors').slick('unslick');
+  });
+});
+
+
+$(() => {
+  // input type number
+  $('.quantity').on('click', '.quantity-minus, .quantity-plus', function quantityClick(e) {
+    e.preventDefault();
+    const input = $( this ).siblings( '.quantity-num' );
     if ( (input.val() > 1) && ($( this ).hasClass( 'quantity-minus' ) ) ) {
         input.val( +input.val() - 1 );
     } else if ( $( this ).hasClass( 'quantity-plus' ) ) {
       input.val( +input.val() + 1 );
     };
   });
-  //Стилизованный input type file
-  $('.upload__file').change(function() {
-    var filename = [];
-    for (var i = 0; i < $(this).get(0).files.length; ++i) { // Запускаем цикл и перебираем все файлы
-      filename.push($(this).get(0).files[i].name.slice(0, 18) + '...'); // Добавляем имена файлов в массив
+});
+
+$(() => {
+  $('.footer__top-ttl').on('click', function footerTitleClick() {
+    $(this)
+    .toggleClass('active')
+    .next('.footer__top-list')
+    .slideToggle();
+  });
+});
+
+$(() => {
+  $('.cat-side__ttl').on('click', function catTitleClick(){
+    $(this)
+    .toggleClass('active')
+    .next('.cat-side__list')
+    .slideToggle();
+  });
+});
+
+$(() => {
+  // data tabs
+  $('.tabs__content-item:not(:first-child)').hide();
+  $('ul.tabs__list > li').on('click', function tabsLiClick() {
+    if (!($(this).hasClass('active'))) {
+      $(this)
+       .addClass('active')
+        .siblings()
+        .removeClass('active');
+      $('.tabs__content-item')
+        .hide()
+      $('.tabs__content-item[data-item="' + $(this)
+        .attr('data-item') + '"]')
+        .fadeIn('slow');
     }
-    $(this).next('.filename').text(filename.join(', '));
-    $(this).parent().next('.upload__file-status').css('display','none');
   });
-  $('.excl__slider').owlCarousel({
-      nav: false,
-      items: 1,
-      loop: true,
-      autoplay: true,
-      autoplayTimeout: 3000,
-      autoplayHoverPause: true,
-      dots: true,
-      smartSpeed: 800,
+});
+
+$(() => {
+  $('.fancybox-close__btn').
+    on('click', function fancyboxCloseClick(){
+    $.fancybox.close();
   });
-  $('.excl-bot__slider').owlCarousel({
-      nav: true,
-      loop: false,
-      dots: false,
-      smartSpeed: 800,
-      margin: 30,
-      navText: ["<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg>","<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg>"],
-      responsive : {
-        0   : {
-            items: 1
-        },
-        380 : {
-            items: 1
-        },
-        600 : {
-            items: 1
-        },
-        900 : {
-            items: 2
-        },
-        1200 : {
-            items: 3
-        }
-      }
+});
+
+$(() => {
+  // Стилизованный input type file
+  $('.upload__file').change(function uploadChange() {
+    let filename = [];
+    for (let i = 0; i < $(this)
+      .get(0).files.length; ++i) {
+      filename
+        .push($(this)
+        .get(0).files[i]
+        .name
+        .slice(0, 18) + '...');
+    }
+    $(this)
+      .next('.filename')
+      .text(filename.join(', '));
+    $(this)
+      .parent()
+      .next('.upload__file-status')
+      .css('display','none');
   });
+});
+
+$(() => {
   if ( $(window).width() > 1200 ) {
    $('.selectmenu').selectmenu({
     width: 90
@@ -443,60 +539,69 @@ $(function() {
   } else {
     $('.selectmenu').selectmenu({});
   }
+});
 
-  $('.show-filter').on('click', function() {
+$(() => {
+  $('.show-filter').on('click', function showFilterClick() {
     $(this).toggleClass('active');
     $('.cat-tabs').slideToggle();
     $('.cat-filter').slideToggle();
   })
+});
 
-  $('.header__hamb').on('click', function() {
+$(() => {
+  $('.header__hamb').on('click', function hambClick() {
     $(this).toggleClass('active');
     $('.main-nav').slideToggle();
-  })
+  });
+});
 
-  $('.show-mob-cat').on('click', function() {
+$(() => {
+  $('.show-mob-cat').on('click', function mobCatBtnClick() {
     $(this).toggleClass('active');
     $('.mob-cat__wrp').slideToggle();
   })
-  
-  $('.mob-cat__ttl').on('click', function(){
+});
+
+$(() => {
+  $('.mob-cat__ttl').on('click', function mobCatTitleClick(){
     $(this)
     .toggleClass('active')
     .next('.mob-cat__list')
     .slideToggle();
   });
+});
 
+$(() => {
   if ( $(window).width() < 1199 ) {
     $('.main-cat__list').removeClass('row');
     $('.main-cat__item-col').removeClass('col-xl-2 mb-2');
 
     $('.main-cat__item-wrp').removeClass('col-xl-2 col-sm-4 col-6 mb-3');
-
     $('.main-cat__item-col .main-cat__item-wrp:nth-child(1)').addClass('mb-2');
-    
+
     $('.main-cat__list').addClass('owl-carousel');
     $('.main-cat__list').owlCarousel({
-        nav: true,
-        loop: false,
-        dots: false,
-        smartSpeed: 800,
-        margin: 30,
-        navText: ["<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg>","<svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg>"],
-        responsive : {
-          0   : {
-              items: 1
-          },
-          320 : {
-              items: 2
-          },
-          600 : {
-              items: 3
-          },
-          900 : {
-              items: 4
-          },
-        }
+      nav: true,
+      loop: false,
+      dots: false,
+      smartSpeed: 800,
+      margin: 30,
+      navText: ["<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg></span>","<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span>"],
+      responsive : {
+        0   : {
+            items: 1
+        },
+        320 : {
+            items: 2
+        },
+        600 : {
+            items: 3
+        },
+        900 : {
+            items: 4
+        },
+      }
     });
   }
 });
