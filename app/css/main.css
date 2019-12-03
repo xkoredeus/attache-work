@@ -974,6 +974,11 @@ a.wt:hover {
     width: 30px;
     height: 30px;
   }
+  .owl-carousel .owl-nav button.owl-prev span,
+  .owl-carousel .owl-nav button.owl-next span {
+    width: 25px;
+    height: 25px;
+  }
 }
 
 .owl-carousel .owl-nav button.owl-prev svg,
@@ -5045,10 +5050,45 @@ a.ui-button:active {
   padding: 0;
   font-size: 32px;
   font-family: "GothamPro";
+  position: relative;
+}
+
+.cart__item-btn-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+}
+
+.cart__item-btn-icon:nth-child(2) {
+  -webkit-transform: translate(-50%, -50%) scale(0.5);
+      -ms-transform: translate(-50%, -50%) scale(0.5);
+          transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+}
+
+.cart__item-btn.active .cart__item-btn-icon:nth-child(1) {
+  -webkit-transform: translate(-50%, -50%) scale(0.5);
+      -ms-transform: translate(-50%, -50%) scale(0.5);
+          transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+}
+
+.cart__item-btn.active .cart__item-btn-icon:nth-child(2) {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+      -ms-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
 }
 
 @media only screen and (max-width: 1200px) {
   .cart__item-btn {
+    position: relative;
     width: 200px;
     height: auto;
     font-size: 13px;
@@ -5082,6 +5122,19 @@ a.ui-button:active {
 
 .cart__item-comm-wrp {
   position: relative;
+}
+
+@media only screen and (max-width: 1200px) {
+  .cart__item-comm {
+    width: 200px;
+    position: relative;
+    left: 0;
+    top: 0;
+    -webkit-transform: translate(0);
+        -ms-transform: translate(0);
+            transform: translate(0);
+    margin-top: 10px;
+  }
 }
 
 .prod__item {

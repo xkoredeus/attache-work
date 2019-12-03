@@ -566,10 +566,19 @@ $(() => {
 $(() => {
   $('.mob-cat__ttl').on('click', function mobCatTitleClick(){
     $(this)
-    .toggleClass('active')
-    .next('.mob-cat__list')
-    .slideToggle();
+      .toggleClass('active')
+      .next('.mob-cat__list')
+      .slideToggle();
   });
+});
+
+$(() => {
+  $('.js-show-comm').on('click', function cartCommBtnClick(){
+    $(this)
+      .toggleClass('active')
+      .next('.cart__item-comm')
+      .slideToggle();
+  })
 });
 
 $(() => {

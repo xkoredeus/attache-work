@@ -603,6 +603,9 @@ a.wt
       +r(1200)
         width: 30px
         height: 30px
+        span
+          width: 25px
+          height: 25px
       svg
         max-width: 17px
         max-height: 17px
@@ -2855,7 +2858,27 @@ a.ui-button:active
       padding: 0
       font-size: 32px
       font-family: $g-reg
+      position: relative
+      &-icon
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+        +ease
+        &:nth-child(2),
+          transform: translate(-50%,-50%) scale(.5)
+          opacity: 0
+      &.active
+        .cart__item-btn
+          &-icon
+            &:nth-child(1)
+              transform: translate(-50%,-50%) scale(.5)
+              opacity: 0
+            &:nth-child(2)
+              transform: translate(-50%,-50%) scale(1)
+              opacity: 1
       +r(1200)
+        position: relative
         width: 200px
         height: auto
         font-size: 13px
@@ -2879,6 +2902,13 @@ a.ui-button:active
         padding: 5px 8px
       &-wrp
         position: relative
+      +r(1200)
+        width: 200px
+        position: relative
+        left: 0
+        top: 0
+        transform: translate(0)
+        margin-top: 10px
 .prod
   &__item
     width: 100%
