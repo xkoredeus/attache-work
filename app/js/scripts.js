@@ -410,25 +410,33 @@ $(() => {
   });
 })
 
-// TODO: destroy slick when mouseleave
 $(() => {
-  $('.hit__item-wrp').hover(function hitItemHover() {
+  $('.hit__item-wrp').mouseenter(function hitItemMouseEnter() {
     $(this)
-    .find('.hit__item-more')
-    .slideToggle(0)
-    .parents('.owl-item')
-    .filter('.active')
-    .toggleClass('hover')
-    .find('.hit__item-colors').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      infinite: false,
-      prevArrow:"<button type='button' class='slick-prev pull-left'><span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg></span></button>",
-      nextArrow:"<button type='button' class='slick-next pull-right'><span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span></button>"
-    })
+      .find('.hit__item-more')
+      .slideDown(0)
+      .find('.hit__item-colors').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: false,
+        prevArrow:"<button type='button' class='slick-prev pull-left'><span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg></span></button>",
+        nextArrow:"<button type='button' class='slick-next pull-right'><span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span></button>"
+      })
+      .parents('.owl-item')
+      .filter('.active')
+      .addClass('hover');
+  });
+  $('.hit__item-wrp').mouseleave(function hitItemMouseLeave() {
+    $(this)
+      .find('.hit__item-more')
+      .slideUp(0)
+      .find('.hit__item-colors').slick('unslick')
+      .parents('.owl-item')
+      .filter('.active')
+      .removeClass('hover')
   });
 });
-// TODO: destroy slick when mouseleave
+
 $(() => {
   $('.cat__item-wrp').mouseenter(function catItemMouseEnter() {
     $(this)
@@ -442,13 +450,11 @@ $(() => {
         nextArrow:"<button type='button' class='slick-next pull-right'><span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span></button>"
       });
   });
-});
-$(() => {
   $('.cat__item-wrp').mouseleave(function catItemMouseLeave() {
     $(this)
       .find('.cat__item-more')
-      .slideUp(0);
-    $('.cat__item-colors').slick('unslick');
+      .slideUp(0)
+      .find('.cat__item-colors').slick('unslick');
   });
 });
 
@@ -543,9 +549,25 @@ $(() => {
 
 $(() => {
   $('.show-filter').on('click', function showFilterClick() {
-    $(this).toggleClass('active');
-    $('.cat-tabs').slideToggle();
-    $('.cat-filter').slideToggle();
+    if (!($(this).hasClass('active'))) {
+      $(this)
+        .addClass('active')
+        .find('span')
+        .text('Скрыть фильтр')
+      $('.cat-tabs')
+        .slideDown();
+      $('.cat-filter')
+        .slideDown();
+    } else {
+      $(this)
+        .removeClass('active')
+        .find('span')
+        .text('Показать фильтр')
+      $('.cat-tabs')
+        .slideUp();
+      $('.cat-filter')
+        .slideUp();
+    }
   })
 });
 
@@ -583,6 +605,7 @@ $(() => {
 
 $(() => {
   if ( $(window).width() < 1199 ) {
+    // category slider
     $('.main-cat__list').removeClass('row');
     $('.main-cat__item-col').removeClass('col-xl-2 mb-2');
 
@@ -612,5 +635,81 @@ $(() => {
         },
       }
     });
+
+    $('.about-test__list')
+      .removeClass('row')
+      .addClass('owl-carousel');
+    $('.about-test__item-wrp')
+      .removeClass('col-xl-4');
+    $('.about-test__list').owlCarousel({
+      nav: true,
+      loop: false,
+      dots: false,
+      smartSpeed: 800,
+      margin: 30,
+      navText: ["<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg></span>","<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span>"],
+      responsive : {
+        0   : {
+            items: 1
+        },
+        600 : {
+            items: 2
+        },
+        900 : {
+            items: 3,
+        },
+      }
+    });
+
+    $('.team__list')
+      .removeClass('row')
+      .addClass('owl-carousel');
+    $('.team__item-wrp')
+      .removeClass('col-xl-4 mb-3 mb-xl-4');
+    $('.team__list').owlCarousel({
+      nav: true,
+      loop: false,
+      dots: false,
+      smartSpeed: 800,
+      margin: 30,
+      navText: ["<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg></span>","<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span>"],
+      responsive : {
+        0   : {
+            items: 1
+        },
+        600 : {
+            items: 2
+        },
+        900 : {
+            items: 3,
+        },
+      }
+    });
+
+    $('.manager__list')
+      .removeClass('row')
+      .addClass('owl-carousel');
+    $('.manager__item-wrp')
+      .removeClass('col-xl-3 mb-3 mb-xl-4');
+    $('.manager__list').owlCarousel({
+      nav: true,
+      loop: false,
+      dots: false,
+      smartSpeed: 800,
+      margin: 30,
+      navText: ["<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M10 1L2 9L10 17' stroke-width='2'/></svg></span>","<span><svg width='11' height='18' viewBox='0 0 11 18' xmlns='http://www.w3.org/2000/svg'><path d='M1 17L9 9L1 0.999999' stroke-width='2'/></svg></span>"],
+      responsive : {
+        0   : {
+            items: 1
+        },
+        600 : {
+            items: 2
+        },
+        900 : {
+            items: 3,
+        },
+      }
+    });
+    
   }
 });

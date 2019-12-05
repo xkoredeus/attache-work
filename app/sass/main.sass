@@ -1709,10 +1709,14 @@ a.wt
   padding:
     top: 30px
     bottom: 40px
+  +r(1200)
+    text-align: center
   .section__ttl
     line-height: 1.2
     text-align: left
-    max-width: 397px1
+    // max-width: 397px
+    +r(1200)
+      text-align: center
   &__soc
     &-item
       width: 44px
@@ -1733,6 +1737,8 @@ a.wt
   &__form
     +r(1200)
       max-width: 460px
+      margin-left: auto
+      margin-right: auto
     input
       background-color: $tr
       border-color: #fff
@@ -1797,6 +1803,8 @@ a.wt
       margin-bottom: 4px
 .found
   position: relative
+  +r(1200)
+    text-align: center
   &__tel
     font-family: $g-bold
     font-size: 24px
@@ -1808,6 +1816,8 @@ a.wt
   .section__ttl
     line-height: 1.1
     text-align: left
+    +r(1200)
+      text-align: center
 .seo-text
   background-color: $lgr
   &_wt
@@ -1887,7 +1897,7 @@ a.wt
   &_gr
     background-color: $lgr
   +r(1200)
-    padding-top: 25px
+    padding-top: 0
     padding-bottom: 35px
 .crumbs
   display: flex
@@ -1995,6 +2005,9 @@ div
               svg
                 stroke: #fff
 .about
+  &-begin
+    +r(1200)
+      padding-top: 0
   &-test
     background-color: $lgr
     &__item
@@ -2037,8 +2050,8 @@ div
     display: flex
     justify-content: center
     align-items: center
-    +r(1200)
-      height: 200px
+    // +r(1200)
+    //   height: 200px
     &::before
       +ovl
       background-color: $red
@@ -2144,15 +2157,32 @@ div
       top: 0
       transform: translate(0)
       margin-left: 0
-      background-color: $dark
+      background-color: $red
     &-top
+      text-align: center
       color: #fff
       padding: 25px 35px
       background-color: #cb0909a8
+      .section__ttl
+        text-align: center !important
+      +r(1200)
+        background-color: $tr
+        padding-left: 15px
+        padding-right: 15px
+        margin-left: auto
+        margin-right: auto
+      +rmin(768)
+        max-width: 720px
+      +rmin(576)
+        max-width: 540px
+      +r(576)
+        width: 100%
     &-img
       width: 100%
       height: 180px
       +cv
+      +r(1200)
+        height: 0
   &__req-link
     color: $red
     svg
